@@ -14,6 +14,14 @@ class User < ActiveRecord::Base
 
   attr_accessible :username, :password, :password_confirmation, :db_username, :db_password, :db_password_confirmation
 
+  before_create { generate_token(:auth_token) }
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
+
   def encrypt_password
     if password.present?
       self.password_salt = SecureRandom.hex(64)
@@ -28,35 +36,31 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.authenticate(username, password)
-    user = find_by_username(username)
-    if user
-      begin
-        in_derived_key = Digest::SHA256.hexdigest(password)
+  def authenticate(password)
+    begin
+      in_derived_key = Digest::SHA256.hexdigest(password)
 
-        in_salted_csk_decryptor = ActiveSupport::MessageEncryptor.new(in_derived_key, :cipher => 'aes-256-cbc')
-        in_salted_csk = in_salted_csk_decryptor.decrypt(user.encrypted_password)
+      in_salted_csk_decryptor = ActiveSupport::MessageEncryptor.new(in_derived_key, :cipher => 'aes-256-cbc')
+      in_salted_csk = in_salted_csk_decryptor.decrypt(self.encrypted_password)
 
-        in_password_salt = in_salted_csk[128..255]
+      in_password_salt = in_salted_csk[128..255]
 
-        if in_password_salt == user.password_salt
-          logger.debug "[User.self.authenticate] User authenticated"
+      if in_password_salt == self.password_salt
+        logger.debug "[User.self.authenticate] User authenticated"
 
-          csk = in_salted_csk[0..127]
-          db_password_decryptor = ActiveSupport::MessageEncryptor.new(csk, :cipher => 'aes-256-cbc')
-          user.db_password = db_password_decryptor.decrypt(user.db_encrypted_password)
+        csk = in_salted_csk[0..127]
+        db_password_decryptor = ActiveSupport::MessageEncryptor.new(csk, :cipher => 'aes-256-cbc')
+        self.db_password = db_password_decryptor.decrypt(self.db_encrypted_password)
 
-          user
-        else
-          logger.debug "[User.self.authenticate] Authentication failed (salt mismatch)"
-          nil
-        end
-      rescue
-        logger.debug "[User.self.authenticate] Authentication failed (decryption failure)"
-        nil
+        return true
+      else
+        logger.debug "[User.self.authenticate] Authentication failed (salt mismatch)"
+        return false
       end
-    else
-      nil
+    rescue
+      logger.debug "[User.self.authenticate] Authentication failed (decryption failure)"
     end
+
+    false
   end
 end
