@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
+  require 'active_admin_views_pages_base.rb'
+
   before_filter :reconnect_db
   after_filter  :restore_db
   helper_method :current_user
