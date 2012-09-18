@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  goods_received_id: 1
+  item_id: 1
+  quantity: 9.99
+  price: 9.99
+  currency: MyString
+  rate: 9.99
+  line_total: 9.99
+  total_foreign: 9.99
+  tax_rate: 9.99
+  tax_total: 9.99
+  tax_total_foreign: 9.99
+  grand_total: 9.99
+  grand_total_foreign: 9.99
+  remarks: MyString
+
+two:
+  goods_received_id: 1
+  item_id: 1
+  quantity: 9.99
+  price: 9.99
+  currency: MyString
+  rate: 9.99
+  line_total: 9.99
+  total_foreign: 9.99
+  tax_rate: 9.99
+  tax_total: 9.99
+  tax_total_foreign: 9.99
+  grand_total: 9.99
+  grand_total_foreign: 9.99
+  remarks: MyString

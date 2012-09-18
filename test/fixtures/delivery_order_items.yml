@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  delivery_order_id: 1
+  line_num: 1
+  line_status: MyString
+  item_id: 1
+  quantity: 9.99
+  price: 9.99
+  currency: MyString
+  rate: 9.99
+  line_total: 9.99
+  disc_rate: 9.99
+  disc_total: 9.99
+  tax_rate: 9.99
+  tax_total: 9.99
+  grand_total: 9.99
+  remarks: MyString
+
+two:
+  delivery_order_id: 1
+  line_num: 1
+  line_status: MyString
+  item_id: 1
+  quantity: 9.99
+  price: 9.99
+  currency: MyString
+  rate: 9.99
+  line_total: 9.99
+  disc_rate: 9.99
+  disc_total: 9.99
+  tax_rate: 9.99
+  tax_total: 9.99
+  grand_total: 9.99
+  remarks: MyString

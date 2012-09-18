@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   after_filter  :restore_db
   helper_method :current_user
 
+  #rescue_from ActiveRecord::ConnectionAdapters::OracleEnhancedConnectionException, :with => :user_not_authorized
+
   def authenticate_app_user!
     redirect_to log_in_path if current_user.nil?
   end
@@ -49,7 +51,13 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def current_user
     @current_user ||= User.find_by_auth_token(cookies[:auth_token]) if cookies[:auth_token]
+  end
+
+  def user_not_authorized
+    flash[:error] = "You do not have the necessary privileges."
+    redirect_to :back
   end
 end

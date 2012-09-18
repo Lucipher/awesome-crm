@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  status: MyString
+  type: 
+  unit: MyString
+  weight: 9.99
+  length: 9.99
+  width: 9.99
+  height: 9.99
+  group_id: 1
+  on_hand: 9.99
+  committed: 9.99
+  on_order: 9.99
+  max_quantity: 9.99
+  reorder_quantity: 9.99
+  last_purchase_price: 9.99
+  last_purchase_currency: MyString
+  last_purchase_date: 2012-09-18
+  last_sales_price: 9.99
+  last_sales_currency: MyString
+  last_sales_date: 2012-09-18
+  average_price: 9.99
+  stock_value: 9.99
+
+two:
+  name: MyString
+  status: MyString
+  type: 
+  unit: MyString
+  weight: 9.99
+  length: 9.99
+  width: 9.99
+  height: 9.99
+  group_id: 1
+  on_hand: 9.99
+  committed: 9.99
+  on_order: 9.99
+  max_quantity: 9.99
+  reorder_quantity: 9.99
+  last_purchase_price: 9.99
+  last_purchase_currency: MyString
+  last_purchase_date: 2012-09-18
+  last_sales_price: 9.99
+  last_sales_currency: MyString
+  last_sales_date: 2012-09-18
+  average_price: 9.99
+  stock_value: 9.99

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  line_num: 
+  line_status: MyString
+  open_date: 2012-09-18
+  pred_date: 2012-09-18
+  close_date: 2012-09-18
+  status: MyString
+  memo: MyText
+
+two:
+  line_num: 
+  line_status: MyString
+  open_date: 2012-09-18
+  pred_date: 2012-09-18
+  close_date: 2012-09-18
+  status: MyString
+  memo: MyText
