@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919050338) do
+ActiveRecord::Schema.define(:version => 20120919073427) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -515,14 +515,15 @@ ActiveRecord::Schema.define(:version => 20120919050338) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "encrypted_password",    :limit => 1024, :default => "", :null => false
-    t.datetime "created_at",                                            :null => false
-    t.datetime "updated_at",                                            :null => false
+    t.string   "encrypted_password",    :limit => 1024,                                :default => "", :null => false
+    t.datetime "created_at",                                                                           :null => false
+    t.datetime "updated_at",                                                                           :null => false
     t.string   "username"
     t.string   "password_salt",         :limit => 1024
     t.string   "db_encrypted_password", :limit => 1024
     t.string   "db_username"
     t.string   "auth_token"
+    t.integer  "employee_id",                           :precision => 38, :scale => 0
   end
 
   add_index "users", ["username"], :name => "index_users_on_username"

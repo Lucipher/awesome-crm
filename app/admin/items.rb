@@ -4,7 +4,7 @@ ActiveAdmin.register Item, :namespace => false do
   index do
     column :id
     column :name
-    column :group
+    column :group, :sortable => false
     column :on_hand
     column :committed
     column :on_order

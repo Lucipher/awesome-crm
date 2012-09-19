@@ -4,8 +4,8 @@ ActiveAdmin.register Employee, :namespace => false do
   index do
     column :id
     column :name
-    column :job_title
-    column :department
+    column :job_title, :sortable => false
+    column :department, :sortable => false
     column :phone
     column :email
     column :status

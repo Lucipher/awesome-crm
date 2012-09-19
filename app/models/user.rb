@@ -10,9 +10,16 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :db_password
   validates_presence_of :password, :on => :create
   validates_presence_of :username
+  validates_presence_of :db_username, :on => :create
+  validates_presence_of :db_password, :on => :create
+  validates_presence_of :employee, :on => :create
+
   validates_uniqueness_of :username
 
-  attr_accessible :username, :password, :password_confirmation, :db_username, :db_password, :db_password_confirmation
+  attr_accessible :username, :password, :password_confirmation, :db_username, :db_password, :db_password_confirmation,
+                  :employee_id
+
+  belongs_to :employee
 
   before_create { generate_token(:auth_token) }
 

@@ -1,40 +1,76 @@
-<h1>Provision a User</h1>
+<% body_class "logged_out new" %>
 
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
+<div id="wrapper">
+  <div id="content_wrapper">
+    <% if flash[:alert] %>
+      <div class="flash flash_alert"><%= flash[:alert] %></div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="flash flash_notice"><%= flash[:notice] %></div>
+    <% end %>
+
+
+    <div id="active_admin_content">
+      <div id="login">
+        <h2>Provision a User</h2>
+
+        <% if @user.errors.any? %>
+          <div class="flash flash_alert">
+            <p>
+              Provisioning failed.
+            </p>
+            <ul>
+              <% for message in @user.errors.full_messages %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <%= form_for @user do |f| %>
+          <fieldset class="inputs">
+            <ol>
+              <li class="string required">
+                <%= f.label :employee %>
+                <%= f.select :employee_id,
+                             options_for_select(
+                                     Employee.all.collect {|emp| [ emp.name, emp.id ] } ) %>
+              </li>
+              <li class="string required">
+                <%= f.label :username %>
+                <%= f.text_field :username %>
+              </li>
+              <li class="password required">
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+              </li>
+              <li class="password required">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation %>
+              </li>
+              <li class="string required">
+                <%= f.label :db_username %>
+                <%= f.text_field :db_username %>
+              </li>
+              <li class="password required">
+                <%= f.label :db_password %>
+                <%= f.password_field :db_password %>
+              </li>
+              <li class="password required">
+                <%= f.label :db_password_confirmation %>
+                <%= f.password_field :db_password_confirmation %>
+              </li>
+            </ol>
+          </fieldset>
+          <fieldset class="buttons">
+            <ol>
+              <li class="commit">
+                <%= f.submit "Provision", :class => "create" %>
+              </li>
+            </ol>
+          </fieldset>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <h3>Oracle DB Credentials</h3>
-  <p>
-    <%= f.label :db_username %>
-    <%= f.text_field :db_username %>
-  </p>
-  <p>
-    <%= f.label :db_password %>
-    <%= f.password_field :db_password %>
-  </p>
-  <p>
-    <%= f.label :db_password_confirmation %>
-    <%= f.password_field :db_password_confirmation %>
-  </p>
-  <p class="button"><%= f.submit %></p>
-<% end %>
+  </div>
+</div>

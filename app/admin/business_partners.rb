@@ -5,9 +5,9 @@ ActiveAdmin.register BusinessPartner, :namespace => false do
     column :id
     column :name
     column :phone
-    column :email
-    column :business_partner_type
-    column :shipping
+    column :email, :sortable => false
+    column :business_partner_type, :sortable => false
+    column :shipping, :sortable => false
 
     default_actions
   end

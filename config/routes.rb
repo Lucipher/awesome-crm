@@ -1,7 +1,6 @@
 CRM::Application.routes.draw do
   get "welcome/index"
 
-  get "provision_user" => "users#new", :as => "provision_user"
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
 

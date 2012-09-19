@@ -8,6 +8,7 @@ class Employee < ActiveRecord::Base
   belongs_to :department
   belongs_to :job_title
   has_one :sales_person, :dependent => :destroy
+  has_one :user, :dependent => :destroy
   has_many :goods_receiveds
   has_many :goods_returneds
 
