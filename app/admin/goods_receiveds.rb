@@ -1,5 +1,5 @@
-ActiveAdmin.register GoodsReceived, :namespace => false do
-  menu :parent => "Items"
+ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace => false do
+  menu :parent => "Forms"
 
   form do |f|
     f.inputs do

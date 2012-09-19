@@ -20,4 +20,6 @@ class Item < ActiveRecord::Base
   has_many :ar_credit_memos
   has_many :ar_down_payment_invoices
 
+  belongs_to :group
+
 end

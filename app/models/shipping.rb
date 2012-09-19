@@ -5,4 +5,7 @@ class Shipping < ActiveRecord::Base
   attr_accessible :name, :remarks
 
   has_many :business_partners
+
+  validates_presence_of :name
+
 end

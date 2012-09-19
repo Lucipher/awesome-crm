@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120918155843) do
+ActiveRecord::Schema.define(:version => 20120919050338) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -211,6 +211,13 @@ ActiveRecord::Schema.define(:version => 20120918155843) do
     t.datetime "updated_at",                                                        :null => false
   end
 
+  create_table "departments", :force => true do |t|
+    t.string   "name",       :limit => 20
+    t.string   "remarks",    :limit => 100
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
   create_table "employees", :force => true do |t|
     t.string   "name"
     t.string   "gender"
@@ -220,27 +227,26 @@ ActiveRecord::Schema.define(:version => 20120918155843) do
     t.string   "status"
     t.datetime "terminate_date"
     t.text     "remarks"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.integer  "department_id",  :precision => 38, :scale => 0
+    t.integer  "job_title_id",   :precision => 38, :scale => 0
   end
 
   create_table "goods_received_items", :force => true do |t|
-    t.integer  "goods_received_id",                  :precision => 38, :scale => 0
-    t.integer  "item_id",                            :precision => 38, :scale => 0
-    t.decimal  "quantity",                           :precision => 19, :scale => 6
-    t.decimal  "price",                              :precision => 19, :scale => 6
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "line_total",                         :precision => 19, :scale => 6
-    t.decimal  "total_foreign",                      :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "tax_total_foreign",                  :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
-    t.decimal  "grand_total_foreign",                :precision => 19, :scale => 6
-    t.string   "remarks",             :limit => 100
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.integer  "goods_received_id",                :precision => 38, :scale => 0
+    t.integer  "item_id",                          :precision => 38, :scale => 0
+    t.decimal  "quantity",                         :precision => 19, :scale => 6
+    t.decimal  "price",                            :precision => 19, :scale => 6
+    t.string   "currency",          :limit => 3
+    t.decimal  "rate",                             :precision => 19, :scale => 6
+    t.decimal  "line_total",                       :precision => 19, :scale => 6
+    t.decimal  "tax_rate",                         :precision => 19, :scale => 6
+    t.decimal  "tax_total",                        :precision => 19, :scale => 6
+    t.decimal  "grand_total",                      :precision => 19, :scale => 6
+    t.string   "remarks",           :limit => 100
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
   end
 
   create_table "goods_receiveds", :force => true do |t|
@@ -259,22 +265,19 @@ ActiveRecord::Schema.define(:version => 20120918155843) do
   end
 
   create_table "goods_returned_items", :force => true do |t|
-    t.integer  "goods_returned_id",                  :precision => 38, :scale => 0
-    t.integer  "item_id",                            :precision => 38, :scale => 0
-    t.decimal  "quantity",                           :precision => 19, :scale => 6
-    t.decimal  "price",                              :precision => 19, :scale => 6
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "line_total",                         :precision => 19, :scale => 6
-    t.decimal  "total_foreign",                      :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "tax_total_foreign",                  :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
-    t.decimal  "grand_total_foreign",                :precision => 19, :scale => 6
-    t.string   "remarks",             :limit => 100
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.integer  "goods_returned_id",                :precision => 38, :scale => 0
+    t.integer  "item_id",                          :precision => 38, :scale => 0
+    t.decimal  "quantity",                         :precision => 19, :scale => 6
+    t.decimal  "price",                            :precision => 19, :scale => 6
+    t.string   "currency",          :limit => 3
+    t.decimal  "rate",                             :precision => 19, :scale => 6
+    t.decimal  "line_total",                       :precision => 19, :scale => 6
+    t.decimal  "tax_rate",                         :precision => 19, :scale => 6
+    t.decimal  "tax_total",                        :precision => 19, :scale => 6
+    t.decimal  "grand_total",                      :precision => 19, :scale => 6
+    t.string   "remarks",           :limit => 100
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
   end
 
   create_table "goods_returneds", :force => true do |t|
@@ -300,30 +303,37 @@ ActiveRecord::Schema.define(:version => 20120918155843) do
   end
 
   create_table "items", :force => true do |t|
-    t.string   "name"
-    t.string   "status"
-    t.string   "type"
-    t.string   "unit"
-    t.integer  "weight",                 :precision => 38, :scale => 0
-    t.integer  "length",                 :precision => 38, :scale => 0
-    t.integer  "width",                  :precision => 38, :scale => 0
-    t.integer  "height",                 :precision => 38, :scale => 0
-    t.integer  "group_id",               :precision => 38, :scale => 0
-    t.integer  "on_hand",                :precision => 38, :scale => 0
-    t.integer  "committed",              :precision => 38, :scale => 0
-    t.integer  "on_order",               :precision => 38, :scale => 0
-    t.integer  "max_quantity",           :precision => 38, :scale => 0
-    t.integer  "reorder_quantity",       :precision => 38, :scale => 0
-    t.integer  "last_purchase_price",    :precision => 38, :scale => 0
-    t.string   "last_purchase_currency"
+    t.string   "name",                   :limit => 100
+    t.string   "status",                 :limit => 20
+    t.string   "type",                   :limit => 20
+    t.string   "unit",                   :limit => 20
+    t.decimal  "weight",                                :precision => 19, :scale => 6
+    t.decimal  "length",                                :precision => 19, :scale => 6
+    t.decimal  "width",                                 :precision => 19, :scale => 6
+    t.decimal  "height",                                :precision => 19, :scale => 6
+    t.integer  "group_id",                              :precision => 38, :scale => 0
+    t.decimal  "on_hand",                               :precision => 19, :scale => 6
+    t.decimal  "committed",                             :precision => 19, :scale => 6
+    t.decimal  "on_order",                              :precision => 19, :scale => 6
+    t.decimal  "max_quantity",                          :precision => 19, :scale => 6
+    t.decimal  "reorder_quantity",                      :precision => 19, :scale => 6
+    t.decimal  "last_purchase_price",                   :precision => 19, :scale => 6
+    t.string   "last_purchase_currency", :limit => 3
     t.datetime "last_purchase_date"
-    t.integer  "last_sales_price",       :precision => 38, :scale => 0
-    t.string   "last_sales_currency"
+    t.decimal  "last_sales_price",                      :precision => 19, :scale => 6
+    t.string   "last_sales_currency",    :limit => 3
     t.datetime "last_sales_date"
-    t.integer  "average_price",          :precision => 38, :scale => 0
-    t.integer  "stock_value",            :precision => 38, :scale => 0
-    t.datetime "created_at",                                            :null => false
-    t.datetime "updated_at",                                            :null => false
+    t.decimal  "average_price",                         :precision => 19, :scale => 6
+    t.decimal  "stock_value",                           :precision => 19, :scale => 6
+    t.datetime "created_at",                                                           :null => false
+    t.datetime "updated_at",                                                           :null => false
+  end
+
+  create_table "job_titles", :force => true do |t|
+    t.string   "name",       :limit => 20
+    t.string   "remarks",    :limit => 100
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "sales_opportunities", :force => true do |t|
@@ -392,9 +402,8 @@ ActiveRecord::Schema.define(:version => 20120918155843) do
   end
 
   create_table "sales_people", :force => true do |t|
-    t.string   "name"
     t.text     "memo"
-    t.integer  "commission",  :precision => 38, :scale => 0
+    t.decimal  "commission",  :precision => 19, :scale => 6
     t.boolean  "locked",      :precision => 1,  :scale => 0
     t.integer  "team_id",     :precision => 38, :scale => 0
     t.integer  "employee_id", :precision => 38, :scale => 0

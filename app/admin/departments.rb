@@ -1,5 +1,5 @@
-ActiveAdmin.register BusinessPartnerType, :namespace => false do
-  menu :parent => "Partners"
+ActiveAdmin.register Department, :namespace => false do
+  menu :parent => "Human Resources"
 
   index do
     column :id

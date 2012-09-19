@@ -4,7 +4,7 @@ class ActiveAdmin::Views::Pages::Base < Arbre::HTML::Document
 
   def build_footer
     div :id => "footer" do
-      para "CS5322: Edwin Boaz Soenaryo, Yang Yuhang, Yao Jinyi - powered by #{link_to('Active Admin', 'http://www.activeadmin.info')} #{ActiveAdmin::VERSION}".html_safe
+      para "CS5322: Edwin Boaz Soenaryo, Yang Yuhang, Yao Jinyi"
     end
   end
 

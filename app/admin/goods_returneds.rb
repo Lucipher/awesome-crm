@@ -1,5 +1,5 @@
-ActiveAdmin.register GoodsReturned, :namespace => false do
-  menu :parent => "Items"
+ActiveAdmin.register GoodsReturned, :as => "Goods Returned Record", :namespace => false do
+  menu :parent => "Forms"
 
   form do |f|
     f.inputs do
