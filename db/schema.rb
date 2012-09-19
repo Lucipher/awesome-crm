@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919073427) do
+ActiveRecord::Schema.define(:version => 20120919171612) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -350,34 +350,36 @@ ActiveRecord::Schema.define(:version => 20120919073427) do
   end
 
   create_table "sales_opportunity_items", :force => true do |t|
-    t.integer  "line_num",                  :precision => 38, :scale => 0
-    t.string   "line_status", :limit => 20
+    t.integer  "line_num",                           :precision => 38, :scale => 0
+    t.string   "line_status",          :limit => 20
     t.datetime "open_date"
     t.datetime "pred_date"
     t.datetime "close_date"
-    t.string   "status",      :limit => 15
+    t.string   "status",               :limit => 15
     t.text     "memo"
-    t.datetime "created_at",                                               :null => false
-    t.datetime "updated_at",                                               :null => false
+    t.datetime "created_at",                                                        :null => false
+    t.datetime "updated_at",                                                        :null => false
+    t.integer  "sales_opportunity_id",               :precision => 38, :scale => 0
   end
 
   create_table "sales_order_items", :force => true do |t|
-    t.integer  "line_num",                   :precision => 38, :scale => 0
-    t.string   "line_status", :limit => 20
-    t.integer  "item_id",                    :precision => 38, :scale => 0
-    t.decimal  "quantity",                   :precision => 19, :scale => 6
-    t.decimal  "price",                      :precision => 19, :scale => 6
-    t.string   "currency",    :limit => 3
-    t.decimal  "rate",                       :precision => 19, :scale => 6
-    t.decimal  "line_total",                 :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                  :precision => 19, :scale => 6
-    t.decimal  "disc_total",                 :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                   :precision => 19, :scale => 6
-    t.decimal  "tax_total",                  :precision => 19, :scale => 6
-    t.decimal  "grand_total",                :precision => 19, :scale => 6
-    t.string   "remarks",     :limit => 100
-    t.datetime "created_at",                                                :null => false
-    t.datetime "updated_at",                                                :null => false
+    t.integer  "line_num",                      :precision => 38, :scale => 0
+    t.string   "line_status",    :limit => 20
+    t.integer  "item_id",                       :precision => 38, :scale => 0
+    t.decimal  "quantity",                      :precision => 19, :scale => 6
+    t.decimal  "price",                         :precision => 19, :scale => 6
+    t.string   "currency",       :limit => 3
+    t.decimal  "rate",                          :precision => 19, :scale => 6
+    t.decimal  "line_total",                    :precision => 19, :scale => 6
+    t.decimal  "disc_rate",                     :precision => 19, :scale => 6
+    t.decimal  "disc_total",                    :precision => 19, :scale => 6
+    t.decimal  "tax_rate",                      :precision => 19, :scale => 6
+    t.decimal  "tax_total",                     :precision => 19, :scale => 6
+    t.decimal  "grand_total",                   :precision => 19, :scale => 6
+    t.string   "remarks",        :limit => 100
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
+    t.integer  "sales_order_id",                :precision => 38, :scale => 0
   end
 
   create_table "sales_orders", :force => true do |t|
@@ -416,16 +418,16 @@ ActiveRecord::Schema.define(:version => 20120919073427) do
     t.integer  "line_num",                          :precision => 38, :scale => 0
     t.string   "line_status",        :limit => 20
     t.integer  "item_id",                           :precision => 38, :scale => 0
-    t.integer  "quantity",                          :precision => 38, :scale => 0
-    t.integer  "price",                             :precision => 38, :scale => 0
+    t.decimal  "quantity",                          :precision => 19, :scale => 6
+    t.decimal  "price",                             :precision => 19, :scale => 6
     t.string   "currency",           :limit => 3
-    t.integer  "rate",                              :precision => 38, :scale => 0
-    t.integer  "line_total",                        :precision => 38, :scale => 0
-    t.integer  "disc_rate",                         :precision => 38, :scale => 0
-    t.integer  "disc_total",                        :precision => 38, :scale => 0
-    t.integer  "tax_rate",                          :precision => 38, :scale => 0
-    t.integer  "tax_total",                         :precision => 38, :scale => 0
-    t.integer  "grand_total",                       :precision => 38, :scale => 0
+    t.decimal  "rate",                              :precision => 19, :scale => 6
+    t.decimal  "line_total",                        :precision => 19, :scale => 6
+    t.decimal  "disc_rate",                         :precision => 19, :scale => 6
+    t.decimal  "disc_total",                        :precision => 19, :scale => 6
+    t.decimal  "tax_rate",                          :precision => 19, :scale => 6
+    t.decimal  "tax_total",                         :precision => 19, :scale => 6
+    t.decimal  "grand_total",                       :precision => 19, :scale => 6
     t.string   "remarks",            :limit => 100
     t.datetime "created_at",                                                       :null => false
     t.datetime "updated_at",                                                       :null => false
@@ -438,13 +440,13 @@ ActiveRecord::Schema.define(:version => 20120919073427) do
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.string   "currency",            :limit => 3
-    t.integer  "rate",                               :precision => 38, :scale => 0
-    t.integer  "total",                              :precision => 38, :scale => 0
-    t.integer  "disc_rate",                          :precision => 38, :scale => 0
-    t.integer  "disc_total",                         :precision => 38, :scale => 0
-    t.integer  "tax_rate",                           :precision => 38, :scale => 0
-    t.integer  "tax_total",                          :precision => 38, :scale => 0
-    t.integer  "grand_total",                        :precision => 38, :scale => 0
+    t.decimal  "rate",                               :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6
+    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6
+    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0

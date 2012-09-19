@@ -9,16 +9,16 @@ class Item < ActiveRecord::Base
 
   has_many :goods_received_items
   has_many :goods_returned_items
-  has_many :sales_orders
-  has_many :sales_quotations
-  has_many :sales_opportunities
-  has_many :sales_quotations
-  has_many :sales_orders
-  has_many :delivery_orders
-  has_many :sales_returns
-  has_many :ar_invoices
-  has_many :ar_credit_memos
-  has_many :ar_down_payment_invoices
+  has_many :sales_order_items
+  has_many :sales_quotation_items
+  has_many :sales_opportunity_items
+  has_many :sales_quotation_items
+  has_many :sales_order_items
+  has_many :delivery_order_items
+  has_many :sales_return_items
+  has_many :ar_invoice_items
+  has_many :ar_credit_memo_items
+  has_many :ar_down_payment_invoice_items
 
   belongs_to :group
 

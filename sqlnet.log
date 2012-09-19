@@ -17,3 +17,363 @@ Fatal NI connect error 12545, connecting to:
     TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
     nt secondary err code: 0
     nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:13:33
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:13:38
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:13:43
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:13:48
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:13:53
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:18:29
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:18:34
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:18:39
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:18:44
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:27:03
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:27:08
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:32:45
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:32:50
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:32:55
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:33:00
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:36:12
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 20:36:17
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 21:40:12
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclevm.local)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl.local)(SERVER=DEDICATED)(CID=(PROGRAM=ruby)(HOST=edwinmac)(USER=edwin))))
+
+  VERSION INFORMATION:
+	TNS for MacOS X Server: Version 10.2.0.4.0 - Production
+	TCP/IP NT Protocol Adapter for MacOS X Server: Version 10.2.0.4.0 - Production
+  Time: 19-SEP-2012 21:40:17
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12545
+    TNS-12545: Message 12545 not found; No message file for product=network, facility=TNS
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Message 515 not found; No message file for product=network, facility=TNS
+    nt secondary err code: 0

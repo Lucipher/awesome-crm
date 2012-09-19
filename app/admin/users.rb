@@ -22,14 +22,16 @@ ActiveAdmin.register User, :namespace => false do
   end
 
   form do |f|
-    f.inputs do
+    f.inputs "User Information" do
       f.input :employee
       f.input :username
       f.input :password
       f.input :password_confirmation
-      f.input :db_username
-      f.input :db_password
-      f.input :db_password_confirmation
+    end
+    f.inputs "Oracle DB Credentials" do
+      f.input :db_username, :label => "DB Username"
+      f.input :db_password, :label => "DB Password"
+      f.input :db_password_confirmation, :label => "DB Password Confirmation"
     end
     f.buttons
   end

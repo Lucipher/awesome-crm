@@ -6,4 +6,5 @@ class SalesReturnItem < ActiveRecord::Base
                   :line_status, :line_total, :price, :quantity, :rate, :remarks, :tax_rate, :tax_total
 
   belongs_to :sales_return
+  belongs_to :item
 end
