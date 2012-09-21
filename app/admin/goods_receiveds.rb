@@ -83,7 +83,7 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
       f.input :doc_total, :label => "Total"
       f.input :doc_total_fc, :label => "Total FC"
       f.input :remarks
-      f.input :employee
+      f.input :employee_id, :as => :hidden, :value => current_user.employee.id
     end
 
     f.inputs "Item List" do

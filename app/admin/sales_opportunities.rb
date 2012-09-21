@@ -79,7 +79,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
       f.input :status
       f.input :memo
       f.input :business_partner
-      f.input :sales_person
+      f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
     end
 
     f.inputs "Item List" do

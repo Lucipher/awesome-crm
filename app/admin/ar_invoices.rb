@@ -90,7 +90,7 @@ ActiveAdmin.register ArInvoice, :as => "AR Invoice", :namespace => false do
   form do |f|
     f.inputs "Document Header" do
       f.input :business_partner
-      f.input :sales_person
+      f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
       f.input :type
       f.input :status
       f.input :date

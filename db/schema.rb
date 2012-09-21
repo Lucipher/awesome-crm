@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919171612) do
+ActiveRecord::Schema.define(:version => 20120920125016) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -69,27 +69,27 @@ ActiveRecord::Schema.define(:version => 20120919171612) do
     t.datetime "updated_at",                                                        :null => false
   end
 
-  create_table "ar_down_payment_invoice_items", :force => true do |t|
-    t.integer  "ar_down_payment_invoice_id",                :precision => 38, :scale => 0
-    t.integer  "line_num",                                  :precision => 38, :scale => 0
-    t.string   "line_status",                :limit => 20
-    t.integer  "item_id",                                   :precision => 38, :scale => 0
-    t.decimal  "quantity",                                  :precision => 19, :scale => 6
-    t.decimal  "price",                                     :precision => 19, :scale => 6
-    t.string   "currency",                   :limit => 3
-    t.decimal  "rate",                                      :precision => 19, :scale => 6
-    t.decimal  "line_total",                                :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                                 :precision => 19, :scale => 6
-    t.decimal  "disc_total",                                :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                                  :precision => 19, :scale => 6
-    t.decimal  "tax_total",                                 :precision => 19, :scale => 6
-    t.decimal  "grand_total",                               :precision => 19, :scale => 6
-    t.string   "remarks",                    :limit => 100
-    t.datetime "created_at",                                                               :null => false
-    t.datetime "updated_at",                                                               :null => false
+  create_table "ar_dp_invoice_items", :force => true do |t|
+    t.integer  "ar_dp_invoice_id",                :precision => 38, :scale => 0
+    t.integer  "line_num",                        :precision => 38, :scale => 0
+    t.string   "line_status",      :limit => 20
+    t.integer  "item_id",                         :precision => 38, :scale => 0
+    t.decimal  "quantity",                        :precision => 19, :scale => 6
+    t.decimal  "price",                           :precision => 19, :scale => 6
+    t.string   "currency",         :limit => 3
+    t.decimal  "rate",                            :precision => 19, :scale => 6
+    t.decimal  "line_total",                      :precision => 19, :scale => 6
+    t.decimal  "disc_rate",                       :precision => 19, :scale => 6
+    t.decimal  "disc_total",                      :precision => 19, :scale => 6
+    t.decimal  "tax_rate",                        :precision => 19, :scale => 6
+    t.decimal  "tax_total",                       :precision => 19, :scale => 6
+    t.decimal  "grand_total",                     :precision => 19, :scale => 6
+    t.string   "remarks",          :limit => 100
+    t.datetime "created_at",                                                     :null => false
+    t.datetime "updated_at",                                                     :null => false
   end
 
-  create_table "ar_down_payment_invoices", :force => true do |t|
+  create_table "ar_dp_invoices", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
     t.datetime "date"

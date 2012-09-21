@@ -1,5 +1,5 @@
 class SalesReturnItem < ActiveRecord::Base
-  set_table_name "CRM.SALES_RETURN_ITEMS"
+  self.table_name = "CRM.SALES_RETURN_ITEMS"
   self.sequence_name = "CRM.SALES_RETURN_ITEMS_SEQ"
 
   attr_accessible :currency, :sales_return_id, :disc_rate, :disc_total, :grand_total, :item_id, :line_num,
@@ -7,4 +7,6 @@ class SalesReturnItem < ActiveRecord::Base
 
   belongs_to :sales_return
   belongs_to :item
+
+  validates_presence_of :item
 end

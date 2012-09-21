@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  set_table_name "CRM.ITEMS"
+  self.table_name = "CRM.ITEMS"
   self.sequence_name = "CRM.ITEMS_SEQ"
 
   attr_accessible :average_price, :committed, :group_id, :height, :last_purchase_currency, :last_purchase_date,

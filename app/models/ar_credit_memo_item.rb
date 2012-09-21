@@ -1,5 +1,5 @@
 class ArCreditMemoItem < ActiveRecord::Base
-  set_table_name "CRM.AR_CREDIT_MEMO_ITEMS"
+  self.table_name = "CRM.AR_CREDIT_MEMO_ITEMS"
   self.sequence_name = "CRM.AR_CREDIT_MEMO_ITEMS_SEQ"
 
   attr_accessible :currency, :ar_credit_memo_id, :disc_rate, :disc_total, :grand_total, :item_id, :line_num,
@@ -7,4 +7,6 @@ class ArCreditMemoItem < ActiveRecord::Base
 
   belongs_to :ar_credit_memo
   belongs_to :item
+
+  validates_presence_of :item
 end

@@ -1,5 +1,5 @@
 class SalesQuotation < ActiveRecord::Base
-  set_table_name "CRM.SALES_QUOTATIONS"
+  self.table_name = "CRM.SALES_QUOTATIONS"
   self.sequence_name = "CRM.SALES_QUOTATIONS_SEQ"
 
   attr_accessible :business_partner_id, :currency, :date, :disc_rate, :disc_total, :due_date, :grand_total, :rate,
@@ -12,4 +12,6 @@ class SalesQuotation < ActiveRecord::Base
   has_many :sales_quotation_items
 
   accepts_nested_attributes_for :sales_quotation_items
+
+  validates_presence_of :business_partner, :sales_person
 end

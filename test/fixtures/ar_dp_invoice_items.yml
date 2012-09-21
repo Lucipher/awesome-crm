@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ar_dp_invoice_id: 1
+
+two:
+  ar_dp_invoice_id: 1

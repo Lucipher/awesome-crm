@@ -1,5 +1,5 @@
 class ArInvoice < ActiveRecord::Base
-  set_table_name "CRM.AR_INVOICES"
+  self.table_name = "CRM.AR_INVOICES"
   self.sequence_name = "CRM.AR_INVOICES_SEQ"
 
   attr_accessible :business_partner_id, :currency, :date, :disc_rate, :disc_total, :due_date, :grand_total, :rate,
@@ -12,4 +12,6 @@ class ArInvoice < ActiveRecord::Base
   has_many :ar_invoice_items
 
   accepts_nested_attributes_for :ar_invoice_items
+
+  validates_presence_of :business_partner, :sales_person
 end

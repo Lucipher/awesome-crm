@@ -90,7 +90,7 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
   form do |f|
     f.inputs "Document Header" do
       f.input :business_partner
-      f.input :sales_person
+      f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
       f.input :type
       f.input :status
       f.input :date
@@ -127,5 +127,21 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
     end
 
     f.buttons
+  end
+
+  member_action :create_sales_order, :method => :post do
+    sales_quotation = SalesQuotation.find(params[:id])
+    sales_order = SalesOrder.copy_from(sales_quotation)
+
+    if sales_order.save
+      flash[:notice] = "Sales order created successfully."
+      redirect_to sales_order
+    else
+      flash.now[:error] = "Failed to create sales order."
+    end
+  end
+
+  action_item :only => :show do
+    link_to('Create Sales Order', create_sales_order_sales_quotation_path(sales_quotation), :method => :post)
   end
 end

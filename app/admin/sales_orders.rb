@@ -90,7 +90,7 @@ ActiveAdmin.register SalesOrder, :namespace => false do
   form do |f|
     f.inputs "Document Header" do
       f.input :business_partner
-      f.input :sales_person
+      f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
       f.input :type
       f.input :status
       f.input :date
@@ -128,4 +128,21 @@ ActiveAdmin.register SalesOrder, :namespace => false do
 
     f.buttons
   end
+
+  member_action :create_delivery_order, :method => :post do
+    sales_order = SalesOrder.find(params[:id])
+    delivery_order = DeliveryOrder.copy_from(sales_order)
+
+    if delivery_order.save
+      flash[:notice] = "Delivery order created successfully."
+      redirect_to delivery_order
+    else
+      flash.now[:error] = "Failed to create delivery order."
+    end
+  end
+
+  action_item :only => :show do
+    link_to('Create Delivery Order', create_delivery_order_sales_order_path(sales_order), :method => :post)
+  end
+
 end

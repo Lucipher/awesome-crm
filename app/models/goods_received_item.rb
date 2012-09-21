@@ -1,5 +1,5 @@
 class GoodsReceivedItem < ActiveRecord::Base
-  set_table_name "CRM.GOODS_RECEIVED_ITEMS"
+  self.table_name = "CRM.GOODS_RECEIVED_ITEMS"
   self.sequence_name = "CRM.GOODS_RECEIVED_ITEMS_SEQ"
 
   attr_accessible :currency, :goods_received_id, :grand_total, :item_id, :line_total, :price,
@@ -7,4 +7,6 @@ class GoodsReceivedItem < ActiveRecord::Base
 
   belongs_to :goods_received
   belongs_to :item
+
+  validates_presence_of :item
 end

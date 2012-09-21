@@ -1,5 +1,5 @@
 class Session < ActiveRecord::Base
-  set_table_name "CRM.SESSIONS"
+  self.table_name = "CRM.SESSIONS"
   self.sequence_name = "CRM.SESSIONS_SEQ"
 
   attr_accessor :session_key

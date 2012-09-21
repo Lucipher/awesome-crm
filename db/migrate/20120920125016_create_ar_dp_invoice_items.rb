@@ -1,7 +1,7 @@
-class CreateArDownPaymentInvoiceItems < ActiveRecord::Migration
+class CreateArDpInvoiceItems < ActiveRecord::Migration
   def change
-    create_table :ar_down_payment_invoice_items do |t|
-      t.integer :ar_down_payment_invoice_id
+    create_table :ar_dp_invoice_items do |t|
+      t.integer :ar_dp_invoice_id
       t.integer :line_num
       t.string :line_status, :limit => 20
       t.integer :item_id

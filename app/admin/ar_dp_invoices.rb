@@ -1,4 +1,4 @@
-ActiveAdmin.register ArDownPaymentInvoice, :as => "AR Down Payment Invoice", :namespace => false do
+ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace => false do
   menu :parent => "Forms"
 
   index do
@@ -40,7 +40,7 @@ ActiveAdmin.register ArDownPaymentInvoice, :as => "AR Down Payment Invoice", :na
 
     div :class => "panel" do
       h3 "Item List"
-      if r.ar_down_payment_invoice_items and r.ar_down_payment_invoice_items.count > 0
+      if r.ar_dp_invoice_items and r.ar_dp_invoice_items.count > 0
         div :class => "panel_contents" do
           div :class => "attributes_table" do
             table do
@@ -60,7 +60,7 @@ ActiveAdmin.register ArDownPaymentInvoice, :as => "AR Down Payment Invoice", :na
                 th do "Grand total" end
               end
               tbody do
-                r.ar_down_payment_invoice_items.each do |ri|
+                r.ar_dp_invoice_items.each do |ri|
                   tr do
                     td do ri.item.name end
                     td do ri.line_num end
@@ -90,7 +90,7 @@ ActiveAdmin.register ArDownPaymentInvoice, :as => "AR Down Payment Invoice", :na
   form do |f|
     f.inputs "Document Header" do
       f.input :business_partner
-      f.input :sales_person
+      f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
       f.input :type
       f.input :status
       f.input :date
@@ -108,7 +108,7 @@ ActiveAdmin.register ArDownPaymentInvoice, :as => "AR Down Payment Invoice", :na
     end
 
     f.inputs "Item List" do
-      f.has_many :ar_down_payment_invoice_items do |fi|
+      f.has_many :ar_dp_invoice_items do |fi|
         fi.input :item
         fi.input :line_num
         fi.input :line_status
@@ -127,5 +127,5 @@ ActiveAdmin.register ArDownPaymentInvoice, :as => "AR Down Payment Invoice", :na
     end
 
     f.buttons
-  end
+  end  
 end

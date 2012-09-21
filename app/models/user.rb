@@ -1,7 +1,7 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
-  set_table_name "CRM.USERS"
+  self.table_name = "CRM.USERS"
   self.sequence_name = "CRM.USERS_SEQ"
 
   attr_accessor :password, :db_password
