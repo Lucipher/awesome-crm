@@ -8,5 +8,5 @@ class GoodsReceivedItem < ActiveRecord::Base
   belongs_to :goods_received
   belongs_to :item
 
-  validates_presence_of :item
+  validates_presence_of :item, :quantity
 end

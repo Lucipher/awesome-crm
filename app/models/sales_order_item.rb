@@ -8,7 +8,7 @@ class SalesOrderItem < ActiveRecord::Base
   belongs_to :item
   belongs_to :sales_order
 
-  validates_presence_of :item
+  validates_presence_of :item, :quantity
 
   def self.copy_from(sales_quotation_item)
     sales_order_item = SalesOrderItem.new

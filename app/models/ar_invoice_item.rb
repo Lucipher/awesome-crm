@@ -8,5 +8,5 @@ class ArInvoiceItem < ActiveRecord::Base
   belongs_to :ar_invoice
   belongs_to :item
 
-  validates_presence_of :item
+  validates_presence_of :item, :quantity
 end

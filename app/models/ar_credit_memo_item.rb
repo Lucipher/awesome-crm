@@ -8,5 +8,5 @@ class ArCreditMemoItem < ActiveRecord::Base
   belongs_to :ar_credit_memo
   belongs_to :item
 
-  validates_presence_of :item
+  validates_presence_of :item, :quantity
 end

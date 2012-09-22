@@ -8,6 +8,6 @@ class SalesQuotationItem < ActiveRecord::Base
   belongs_to :sales_quotation
   belongs_to :item
 
-  validates_presence_of :item
+  validates_presence_of :item, :quantity
 
 end

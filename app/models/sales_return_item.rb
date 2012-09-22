@@ -8,5 +8,5 @@ class SalesReturnItem < ActiveRecord::Base
   belongs_to :sales_return
   belongs_to :item
 
-  validates_presence_of :item
+  validates_presence_of :item, :quantity
 end
