@@ -6,6 +6,7 @@ class SalesPerson < ActiveRecord::Base
 
   belongs_to :team
   belongs_to :employee
+  has_many   :assignments
 
   validates_presence_of :employee
 end

@@ -1,0 +1,117 @@
+TRIGGER RELATED
+
+on insert/update goods returned,received --> update item (DB trigger) when status=posted
+goods received status= cancelled <- draft -> posted
+  when draft update on_order
+  when posted update on_hand, on_order
+if it's posted/cancelled, cannot change
+
+sales opportunity created by manager
+its items goes to salespeople
+
+link is item to item, FK NULL
+opportunity -> quotation -> so -> do -> ar invoice 
+                                     -> returns -> credit memo
+                               -> down payment
+                               
+when sales order is posted, update the item committed amount
+
+when DO is posted, update the on hand
+
+update credit_balance for business_partner, sales_person when delivery_order is posted, when ar invoice is posted
+
+prices in item should be updated
+
+SCHEMA CHANGES
+
+Add role
+user :has_many roles
+roles = {sales_person, sales_manager, finance_manager, finance_executive, stock_manager, stock_keeper, hr_professional, hr_manager, general_manager, db_administrator}
+
+departments = {finance, sales, inventory, IT}
+
++sales_person :has_many business_partners
++business_partner :belongs_to_many :sales_people
+
+add_column :business_partner, [:credit_limit, :credit_balance] :decimal
+add_column :sales_person, [:credit_limit, :credit_balance], :decimal
+
+stock/logistics: manager can buy/send, keeper can only send
+
+1 sales team has 1 manager
+
+ACCESS CONTROL to tables
+
+alter := {insert, update, delete}
+
+Users
+- public can only see, edit their own account
+- administrator can create, select, update, delete all users
+
+Shippings
+- public can see all
+- stock_manager can alter
+
+Business Partner Types
+- public can see all
+- finance_manager can alter
+
+Business Partner
+- sales_person can see those assigned
+- sales_manager can see all
+- finance_manager can see, alter all
+- finance_executive can see, alter record, cannot list
+- stock_manager, stock_keeper can see referenced in DO can only see (name, phone, shipping address, shipping)
+
+Item Group
+- public can see all
+- stock_manager can alter
+
+Items
+
+SELECT
+finance can see everything
+name - public
+group - public
+status - {active, on_hold, cancelled} public can see only active, stock_mgr, stock_keeper can see everything
+type - {product, service} public
+unit, weight, length, width, height - public
+on_hand, committed, on_order - stock_keeper, stock_mgr
+on_hand, committed - sales_manager
+max_quantity - stock (constraint towards goods_received) everyone can see
+reorder (min) quantity - cannot make sales_order if below unless manager (see: everyone)
+last_purchase_price,currency,date - stock_manager, sales
+last_sales_price,currency,date - sales
+average_price (based on purchase) - sales, stock
+
+Departments
+- select: public
+- edit: HR
+
+Employees
+- select: manager can see people he manages, others can see their own records, HR can see all
+- edit: HR
+
+Job Titles
+select: public
+edit: HR
+
+Sales People
+- HR, sales manager can see, edit all
+- sales people can see their own, cannot edit
+- sales people can see people in their team, cannot see commission
+
+Sales Teams
+- HR, sales manager can see, edit all
+- sales people can see all
+
+Forms
+- Sales manager can only see those from team
+- Sales people can see their own forms
+- DO: stock can see all, can change status
+- sales manager creates opportunities, assign items to sales people
+- sales will do the copy to invoice
+- finance can only change status of invoice
+- sales handles returns, they copy to credit memo, then finance process the credit memo
+- quotation: only manager can change status
+- only posted forms can be copied

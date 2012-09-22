@@ -1,5 +1,5 @@
 ActiveAdmin.register GoodsReturned, :as => "Goods Returned Record", :namespace => false do
-  menu :parent => "Forms"
+  menu :parent => "Inventory"
 
   index do
     column :id

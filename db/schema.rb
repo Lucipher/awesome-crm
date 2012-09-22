@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920125016) do
+ActiveRecord::Schema.define(:version => 20120922093221) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -151,6 +151,13 @@ ActiveRecord::Schema.define(:version => 20120920125016) do
     t.datetime "updated_at",                                                        :null => false
   end
 
+  create_table "assignments", :force => true do |t|
+    t.integer  "business_partner_id", :precision => 38, :scale => 0
+    t.integer  "sales_person_id",     :precision => 38, :scale => 0
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+  end
+
   create_table "business_partner_types", :force => true do |t|
     t.string   "name"
     t.text     "remarks"
@@ -168,6 +175,8 @@ ActiveRecord::Schema.define(:version => 20120920125016) do
     t.datetime "updated_at",                                              :null => false
     t.integer  "business_partner_type_id", :precision => 38, :scale => 0
     t.integer  "shipping_id",              :precision => 38, :scale => 0
+    t.decimal  "credit_limit",             :precision => 19, :scale => 6
+    t.decimal  "credit_balance",           :precision => 19, :scale => 6
   end
 
   create_table "delivery_order_items", :force => true do |t|
@@ -405,12 +414,14 @@ ActiveRecord::Schema.define(:version => 20120920125016) do
 
   create_table "sales_people", :force => true do |t|
     t.text     "memo"
-    t.decimal  "commission",  :precision => 19, :scale => 6
-    t.boolean  "locked",      :precision => 1,  :scale => 0
-    t.integer  "team_id",     :precision => 38, :scale => 0
-    t.integer  "employee_id", :precision => 38, :scale => 0
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.decimal  "commission",     :precision => 19, :scale => 6
+    t.boolean  "locked",         :precision => 1,  :scale => 0
+    t.integer  "team_id",        :precision => 38, :scale => 0
+    t.integer  "employee_id",    :precision => 38, :scale => 0
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.decimal  "credit_limit",   :precision => 19, :scale => 6
+    t.decimal  "credit_balance", :precision => 19, :scale => 6
   end
 
   create_table "sales_quotation_items", :force => true do |t|

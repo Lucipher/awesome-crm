@@ -1,0 +1,1 @@
+CREATE OR REPLACE CONTEXT crm_ctx using crm_ctx_pkg;

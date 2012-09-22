@@ -1,5 +1,5 @@
 ActiveAdmin.register Item, :namespace => false do
-  menu :parent => "Items"
+  menu :parent => "Inventory"
 
   index do
     column :id

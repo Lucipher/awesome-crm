@@ -8,6 +8,7 @@ ActiveAdmin.register BusinessPartner, :namespace => false do
     column :email, :sortable => false
     column :business_partner_type, :sortable => false
     column :shipping, :sortable => false
+    column :credit_balance
 
     default_actions
   end
@@ -22,6 +23,8 @@ ActiveAdmin.register BusinessPartner, :namespace => false do
       row :shipping_address
       row :business_partner_type
       row :shipping
+      row :credit_limit
+      row :credit_balance
       row :created_at
       row :updated_at
     end
@@ -36,6 +39,8 @@ ActiveAdmin.register BusinessPartner, :namespace => false do
       f.input :shipping_address,      :input_html => { :rows => 4 }
       f.input :business_partner_type
       f.input :shipping
+      f.input :credit_limit
+      f.input :credit_balance
     end
     f.buttons
   end
