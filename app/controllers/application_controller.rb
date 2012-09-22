@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   after_filter  :restore_db
   helper_method :current_user
 
-  #rescue_from ActiveRecord::ConnectionAdapters::OracleEnhancedConnectionException, :with => :user_not_authorized
+  rescue_from ActiveRecord::ConnectionAdapters::OracleEnhancedConnectionException, :with => :user_not_authorized
 
   def authenticate_app_user!
     redirect_to log_in_path if current_user.nil?
