@@ -1,5 +1,6 @@
 ActiveAdmin.register SalesOrder, :namespace => false do
   menu :parent => "Forms"
+  actions :all, :except => [:destroy]
 
   index do
     column :id
@@ -92,7 +93,7 @@ ActiveAdmin.register SalesOrder, :namespace => false do
       f.input :business_partner
       f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
       f.input :type
-      f.input :status
+      f.input :status,          :as => :select, :collection => %w(draft posted cancelled)
       f.input :date
       f.input :due_date
       f.input :shipping_date

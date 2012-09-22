@@ -1,5 +1,6 @@
 ActiveAdmin.register SalesPerson, :namespace => false do
   menu :parent => "Human Resources"
+  actions :all, :except => [:destroy]
 
   index do
     column :id

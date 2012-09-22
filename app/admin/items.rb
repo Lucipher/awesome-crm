@@ -1,5 +1,6 @@
 ActiveAdmin.register Item, :namespace => false do
   menu :parent => "Inventory"
+  actions :all, :except => [:destroy]
 
   index do
     column :id

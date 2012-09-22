@@ -1,5 +1,6 @@
 ActiveAdmin.register SalesOpportunity, :namespace => false do
   menu :parent => "Forms"
+  actions :all, :except => [:destroy]
 
   index do
     column :id
@@ -76,7 +77,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
       f.input :open_date
       f.input :pred_date
       f.input :close_date
-      f.input :status
+      f.input :status,          :as => :select, :collection => %w(draft posted cancelled)
       f.input :memo
       f.input :business_partner
       f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
@@ -89,7 +90,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
         fi.input :open_date
         fi.input :pred_date
         fi.input :close_date
-        fi.input :status
+        fi.input :status,       :as => :select, :collection => %w(draft posted cancelled)
         fi.input :memo
       end
     end
