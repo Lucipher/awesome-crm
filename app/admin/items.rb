@@ -55,9 +55,6 @@ ActiveAdmin.register Item, :namespace => false do
       f.input :length
       f.input :width
       f.input :height
-      f.input :on_hand
-      f.input :committed
-      f.input :on_order
       f.input :max_quantity
       f.input :reorder_quantity
       f.input :last_purchase_price

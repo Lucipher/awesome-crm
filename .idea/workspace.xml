@@ -4,6 +4,12 @@
     <list default="true" id="3db3b8be-55cd-482c-82c5-2ef112d6a820" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/ar_down_payment_invoice.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20120918155800_create_ar_down_payment_invoices.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/goods_receiveds.rb" afterPath="$PROJECT_DIR$/app/admin/goods_receiveds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/goods_returneds.rb" afterPath="$PROJECT_DIR$/app/admin/goods_returneds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/items.rb" afterPath="$PROJECT_DIR$/app/admin/items.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/goods_received.rb" afterPath="$PROJECT_DIR$/app/models/goods_received.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/goods_returned.rb" afterPath="$PROJECT_DIR$/app/models/goods_returned.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="CRM.iws" />
@@ -27,33 +33,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="20120922093118_add_credit_limit_to_business_partner.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120922093118_add_credit_limit_to_business_partner.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="91" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20120922093221_add_credit_limit_to_sales_person.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120922093221_add_credit_limit_to_sales_person.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="86" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20120919162720_fix_types_for_sales_quotation_items.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120919162720_fix_types_for_sales_quotation_items.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="61" selection-start="133" selection-end="164" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sales_people.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/sales_people.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,37 +51,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20120922094914_add_default_value_to_item.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120922094914_add_default_value_to_item.rb">
+      <file leaf-file-name="20120922144413_create_returned_goods_status_change_trigger.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20120922144413_create_returned_goods_status_change_trigger.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="37" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
+            <state line="11" column="24" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20120922095613_create_inventory_update_triggers.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120922095613_create_inventory_update_triggers.rb">
+      <file leaf-file-name="items.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/items.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="47" selection-start="978" selection-end="978" vertical-scroll-proportion="0.39541042">
+            <state line="51" column="13" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20120922111954_create_goods_returned_insert_trigger.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120922111954_create_goods_returned_insert_trigger.rb">
+      <file leaf-file-name="goods_receiveds.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/goods_receiveds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="45" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0">
+            <state line="64" column="29" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20120919162305_fix_types_for_sales_quotations.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120919162305_fix_types_for_sales_quotations.rb">
+      <file leaf-file-name="goods_received.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/goods_received.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="8" column="56" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="goods_returned.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/goods_returned.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="24" selection-start="267" selection-end="267" vertical-scroll-proportion="0.06926407">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="goods_returneds.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/goods_returneds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="37" selection-start="2234" selection-end="2234" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20120922115905_create_received_goods_status_change_trigger.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20120922115905_create_received_goods_status_change_trigger.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="53" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,13 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/admin/goods_receiveds.rb" />
-        <option value="$PROJECT_DIR$/app/admin/goods_returneds.rb" />
-        <option value="$PROJECT_DIR$/app/models/business_partner.rb" />
-        <option value="$PROJECT_DIR$/app/models/sales_person.rb" />
-        <option value="$PROJECT_DIR$/app/admin/business_partners/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/admin/sales_people/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/sales_people/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/admin/assignments.rb" />
         <option value="$PROJECT_DIR$/app/models/assignment.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120922093118_add_credit_limit_to_business_partner.rb" />
@@ -146,11 +145,18 @@
         <option value="$PROJECT_DIR$/db/migrate/20120922094914_add_default_value_to_item.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120922111954_create_goods_returned_insert_trigger.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120922095613_create_inventory_update_triggers.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20120922115905_create_received_goods_status_change_trigger.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20120922144413_create_returned_goods_status_change_trigger.rb" />
+        <option value="$PROJECT_DIR$/app/admin/items.rb" />
+        <option value="$PROJECT_DIR$/app/admin/goods_receiveds.rb" />
+        <option value="$PROJECT_DIR$/app/admin/goods_returneds.rb" />
+        <option value="$PROJECT_DIR$/app/models/goods_received.rb" />
+        <option value="$PROJECT_DIR$/app/models/goods_returned.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
+    <option name="x" value="124" />
     <option name="y" value="22" />
     <option name="width" value="1244" />
     <option name="height" value="1345" />
@@ -725,7 +731,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="22" width="1244" height="1345" extended-state="0" />
+    <frame x="124" y="22" width="1244" height="1345" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -801,65 +807,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/sales_person.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="25" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/assignments.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="3" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/dashboards.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/business_partner_types.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/business_partner.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="2" selection-start="89" selection-end="137" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/assignment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120919162720_fix_types_for_sales_quotation_items.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="61" selection-start="133" selection-end="164" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20120922093118_add_credit_limit_to_business_partner.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="91" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120922093221_add_credit_limit_to_sales_person.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="86" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -871,16 +821,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/sales_people.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120922095613_create_inventory_update_triggers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="23" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="71" selection-end="960" vertical-scroll-proportion="0.028243601">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120922094914_add_default_value_to_item.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="314" column="0" selection-start="20060" selection-end="20133" vertical-scroll-proportion="0.0">
+        <state line="8" column="37" selection-start="465" selection-end="465" vertical-scroll-proportion="0.10875106">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120922111954_create_goods_returned_insert_trigger.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="45" selection-start="792" selection-end="792" vertical-scroll-proportion="0.3942226">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120922093221_add_credit_limit_to_sales_person.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="86" selection-start="244" selection-end="244" vertical-scroll-proportion="0.040033363">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/sales_people.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="23" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -892,23 +863,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120922094914_add_default_value_to_item.rb">
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="37" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
+        <state line="314" column="0" selection-start="20060" selection-end="20133" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120922111954_create_goods_returned_insert_trigger.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120922115905_create_received_goods_status_change_trigger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="45" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0">
+        <state line="42" column="53" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120922095613_create_inventory_update_triggers.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120922144413_create_returned_goods_status_change_trigger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="47" selection-start="978" selection-end="978" vertical-scroll-proportion="0.39541042">
+        <state line="11" column="24" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/items.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="13" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/goods_returneds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="37" selection-start="2234" selection-end="2234" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/goods_receiveds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="29" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/goods_received.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="56" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/goods_returned.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="24" selection-start="267" selection-end="267" vertical-scroll-proportion="0.06926407">
           <folding />
         </state>
       </provider>

@@ -74,16 +74,16 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
 
   form do |f|
     f.inputs "Document Header" do
-      f.input :doc_type, :label => "Type"
-      f.input :doc_status, :label => "Status"
-      f.input :doc_date, :label => "Date"
-      f.input :doc_due_date, :label => "Due date"
-      f.input :doc_currency, :label => "Currency"
-      f.input :doc_rate, :label => "Rate"
-      f.input :doc_total, :label => "Total"
-      f.input :doc_total_fc, :label => "Total FC"
+      f.input :doc_type,      :label => "Type"
+      f.input :doc_status,    :label => "Status",   :as => :select, :collection => %w(draft posted cancelled)
+      f.input :doc_date,      :label => "Date"
+      f.input :doc_due_date,  :label => "Due date"
+      f.input :doc_currency,  :label => "Currency"
+      f.input :doc_rate,      :label => "Rate"
+      f.input :doc_total,     :label => "Total"
+      f.input :doc_total_fc,  :label => "Total FC"
       f.input :remarks
-      f.input :employee_id, :as => :hidden, :value => current_user.employee.id
+      f.input :employee_id,                         :as => :hidden, :value => current_user.employee.id
     end
 
     f.inputs "Item List" do

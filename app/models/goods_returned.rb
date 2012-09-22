@@ -6,7 +6,7 @@ class GoodsReturned < ActiveRecord::Base
                   :doc_type, :employee_id, :remarks, :goods_returned_items_attributes
 
   belongs_to :employee
-  has_many :goods_returned_items
+  has_many :goods_returned_items, :dependent => :destroy
 
   accepts_nested_attributes_for :goods_returned_items
 
