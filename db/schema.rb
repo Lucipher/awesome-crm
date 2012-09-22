@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120922093221) do
+ActiveRecord::Schema.define(:version => 20120922111954) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -321,9 +321,9 @@ ActiveRecord::Schema.define(:version => 20120922093221) do
     t.decimal  "width",                                 :precision => 19, :scale => 6
     t.decimal  "height",                                :precision => 19, :scale => 6
     t.integer  "group_id",                              :precision => 38, :scale => 0
-    t.decimal  "on_hand",                               :precision => 19, :scale => 6
-    t.decimal  "committed",                             :precision => 19, :scale => 6
-    t.decimal  "on_order",                              :precision => 19, :scale => 6
+    t.decimal  "on_hand",                               :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "committed",                             :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "on_order",                              :precision => 19, :scale => 6, :default => 0.0
     t.decimal  "max_quantity",                          :precision => 19, :scale => 6
     t.decimal  "reorder_quantity",                      :precision => 19, :scale => 6
     t.decimal  "last_purchase_price",                   :precision => 19, :scale => 6
@@ -333,9 +333,9 @@ ActiveRecord::Schema.define(:version => 20120922093221) do
     t.string   "last_sales_currency",    :limit => 3
     t.datetime "last_sales_date"
     t.decimal  "average_price",                         :precision => 19, :scale => 6
-    t.decimal  "stock_value",                           :precision => 19, :scale => 6
-    t.datetime "created_at",                                                           :null => false
-    t.datetime "updated_at",                                                           :null => false
+    t.decimal  "stock_value",                           :precision => 19, :scale => 6, :default => 0.0
+    t.datetime "created_at",                                                                            :null => false
+    t.datetime "updated_at",                                                                            :null => false
   end
 
   create_table "job_titles", :force => true do |t|
