@@ -9,29 +9,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/ar_dp_invoices.rb" afterPath="$PROJECT_DIR$/app/admin/ar_dp_invoices.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/ar_invoices.rb" afterPath="$PROJECT_DIR$/app/admin/ar_invoices.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/delivery_orders.rb" afterPath="$PROJECT_DIR$/app/admin/delivery_orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/goods_receiveds.rb" afterPath="$PROJECT_DIR$/app/admin/goods_receiveds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/goods_returneds.rb" afterPath="$PROJECT_DIR$/app/admin/goods_returneds.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/sales_opportunities.rb" afterPath="$PROJECT_DIR$/app/admin/sales_opportunities.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/sales_orders.rb" afterPath="$PROJECT_DIR$/app/admin/sales_orders.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/sales_quotations.rb" afterPath="$PROJECT_DIR$/app/admin/sales_quotations.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/sales_returns.rb" afterPath="$PROJECT_DIR$/app/admin/sales_returns.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ar_credit_memo.rb" afterPath="$PROJECT_DIR$/app/models/ar_credit_memo.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ar_credit_memo_item.rb" afterPath="$PROJECT_DIR$/app/models/ar_credit_memo_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ar_dp_invoice.rb" afterPath="$PROJECT_DIR$/app/models/ar_dp_invoice.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ar_dp_invoice_item.rb" afterPath="$PROJECT_DIR$/app/models/ar_dp_invoice_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ar_invoice.rb" afterPath="$PROJECT_DIR$/app/models/ar_invoice.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ar_invoice_item.rb" afterPath="$PROJECT_DIR$/app/models/ar_invoice_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/business_partner.rb" afterPath="$PROJECT_DIR$/app/models/business_partner.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/delivery_order.rb" afterPath="$PROJECT_DIR$/app/models/delivery_order.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/delivery_order_item.rb" afterPath="$PROJECT_DIR$/app/models/delivery_order_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/goods_received.rb" afterPath="$PROJECT_DIR$/app/models/goods_received.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/goods_returned.rb" afterPath="$PROJECT_DIR$/app/models/goods_returned.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sales_opportunity.rb" afterPath="$PROJECT_DIR$/app/models/sales_opportunity.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sales_order.rb" afterPath="$PROJECT_DIR$/app/models/sales_order.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sales_order_item.rb" afterPath="$PROJECT_DIR$/app/models/sales_order_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sales_quotation.rb" afterPath="$PROJECT_DIR$/app/models/sales_quotation.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sales_return.rb" afterPath="$PROJECT_DIR$/app/models/sales_return.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sales_return_item.rb" afterPath="$PROJECT_DIR$/app/models/sales_return_item.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/teams.rb" afterPath="$PROJECT_DIR$/app/admin/teams.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/active_admin.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/active_admin.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sales_opportunity_item.rb" afterPath="$PROJECT_DIR$/app/models/sales_opportunity_item.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/team.rb" afterPath="$PROJECT_DIR$/app/models/team.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="CRM.iws" />
@@ -55,28 +40,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="delivery_order.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/delivery_order.rb">
+      <file leaf-file-name="sales_opportunities.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/sales_opportunities.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="25" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sales_return.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/sales_return.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="18" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sales_orders.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/sales_orders.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="48" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0">
+            <state line="91" column="32" selection-start="2797" selection-end="2797" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,16 +52,7 @@
       <file leaf-file-name="ar_credit_memos.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/ar_credit_memos.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="63" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sales_returns.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/admin/sales_returns.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="32" selection-start="876" selection-end="876" vertical-scroll-proportion="0.42611682">
+            <state line="100" column="32" selection-start="3133" selection-end="3133" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,7 +61,7 @@
       <file leaf-file-name="ar_dp_invoices.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/ar_dp_invoices.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="63" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0">
+            <state line="98" column="0" selection-start="3004" selection-end="3156" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,7 +70,16 @@
       <file leaf-file-name="ar_invoices.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/ar_invoices.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="63" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
+            <state line="100" column="50" selection-start="3132" selection-end="3132" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sales_orders.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/sales_orders.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="50" selection-start="3116" selection-end="3116" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,7 +88,25 @@
       <file leaf-file-name="sales_quotations.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/sales_quotations.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="63" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
+            <state line="98" column="50" selection-start="3042" selection-end="3042" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sales_returns.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/sales_returns.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="50" selection-start="3119" selection-end="3119" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teams.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/admin/teams.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="30" selection-start="733" selection-end="733" vertical-scroll-proportion="0.45371142">
               <folding />
             </state>
           </provider>
@@ -130,16 +115,16 @@
       <file leaf-file-name="delivery_orders.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/delivery_orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="63" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0">
+            <state line="100" column="50" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sales_opportunities.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/sales_opportunities.rb">
+      <file leaf-file-name="goods_receiveds.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/goods_receiveds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="63" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -158,29 +143,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/sales_return_item.rb" />
-        <option value="$PROJECT_DIR$/app/models/sales_order_item.rb" />
-        <option value="$PROJECT_DIR$/app/models/sales_order.rb" />
-        <option value="$PROJECT_DIR$/app/models/ar_credit_memo.rb" />
-        <option value="$PROJECT_DIR$/app/models/ar_dp_invoice.rb" />
         <option value="$PROJECT_DIR$/app/models/ar_invoice.rb" />
         <option value="$PROJECT_DIR$/app/models/delivery_order.rb" />
         <option value="$PROJECT_DIR$/app/models/sales_return.rb" />
-        <option value="$PROJECT_DIR$/app/admin/sales_orders.rb" />
+        <option value="$PROJECT_DIR$/app/models/team.rb" />
+        <option value="$PROJECT_DIR$/app/admin/teams.rb" />
+        <option value="$PROJECT_DIR$/app/models/sales_opportunity_item.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/active_admin.css.scss" />
+        <option value="$PROJECT_DIR$/app/models/sales_opportunity.rb" />
+        <option value="$PROJECT_DIR$/app/admin/sales_opportunities.rb" />
         <option value="$PROJECT_DIR$/app/admin/ar_credit_memos.rb" />
         <option value="$PROJECT_DIR$/app/admin/ar_dp_invoices.rb" />
         <option value="$PROJECT_DIR$/app/admin/ar_invoices.rb" />
         <option value="$PROJECT_DIR$/app/admin/delivery_orders.rb" />
-        <option value="$PROJECT_DIR$/app/admin/sales_opportunities.rb" />
+        <option value="$PROJECT_DIR$/app/admin/sales_orders.rb" />
         <option value="$PROJECT_DIR$/app/admin/sales_quotations.rb" />
         <option value="$PROJECT_DIR$/app/admin/sales_returns.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
+    <option name="x" value="42" />
     <option name="y" value="22" />
-    <option name="width" value="1244" />
+    <option name="width" value="1391" />
     <option name="height" value="1345" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -238,57 +223,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vpd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,24 +358,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CRM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -771,7 +688,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="22" width="1244" height="1345" extended-state="0" />
+    <frame x="42" y="22" width="1391" height="1345" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -779,7 +696,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31006494" sideWeight="0.32688767" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36811352" sideWeight="0.67147434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32788104" sideWeight="0.67147434" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -847,114 +764,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/sales_return_item.rb">
+    <entry file="file://$PROJECT_DIR$/app/admin/business_partners.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="27" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/sales_order_item.rb">
+    <entry file="file://$PROJECT_DIR$/app/admin/assignments.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="25" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/sales_order.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/active_admin.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="2" selection-start="672" selection-end="1617" vertical-scroll-proportion="0.0">
+        <state line="9" column="19" selection-start="204" selection-end="204" vertical-scroll-proportion="0.12010008">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ar_credit_memo.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/sales_opportunity_item.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="19" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.0">
+        <state line="8" column="18" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ar_dp_invoice.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/sales_opportunity.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="27" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0">
+        <state line="7" column="29" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ar_invoice.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/team.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="28" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/delivery_order.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="25" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/sales_return.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="18" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/ar_credit_memos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="63" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/ar_dp_invoices.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="63" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/ar_invoices.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="63" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/delivery_orders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="63" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0">
+        <state line="5" column="20" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/sales_opportunities.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="63" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
+        <state line="91" column="32" selection-start="2797" selection-end="2797" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/ar_credit_memos.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="32" selection-start="3133" selection-end="3133" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/ar_dp_invoices.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="3004" selection-end="3156" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/ar_invoices.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="50" selection-start="3132" selection-end="3132" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/delivery_orders.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="50" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/goods_receiveds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/sales_orders.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="48" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0">
+        <state line="100" column="50" selection-start="3116" selection-end="3116" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/sales_quotations.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="63" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
+        <state line="98" column="50" selection-start="3042" selection-end="3042" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/sales_returns.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="32" selection-start="876" selection-end="876" vertical-scroll-proportion="0.42611682">
+        <state line="100" column="50" selection-start="3119" selection-end="3119" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/teams.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="30" selection-start="733" selection-end="733" vertical-scroll-proportion="0.45371142">
           <folding />
         </state>
       </provider>

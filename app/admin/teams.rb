@@ -4,6 +4,9 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
   index do
     column :id
     column :name
+    column :manager do |record|
+      link_to record.manager.employee.name, employee_path(record.manager.employee)
+    end
     column :remarks
 
     default_actions
@@ -13,6 +16,9 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
     attributes_table do
       row :id
       row :name
+      row :manager do |record|
+        link_to record.manager.employee.name, employee_path(record.manager.employee)
+      end
       row :remarks
     end
   end
@@ -20,6 +26,7 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :manager
       f.input :remarks,       :input_html => { :rows => 4 }
     end
     f.buttons

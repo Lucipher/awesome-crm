@@ -96,9 +96,9 @@ ActiveAdmin.register ArInvoice, :as => "AR Invoice", :namespace => false do
       f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
       f.input :type
       f.input :status,          :as => :select, :collection => %w(draft posted cancelled)
-      f.input :date
-      f.input :due_date
-      f.input :shipping_date
+      f.input :date,            :as => :datepicker
+      f.input :due_date,        :as => :datepicker
+      f.input :shipping_date,   :as => :datepicker
       f.input :currency
       f.input :rate
       f.input :total

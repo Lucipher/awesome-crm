@@ -5,7 +5,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
   index do
     column :id
     column :business_partner
-    column :sales_person do |record|
+    column("Created By") do |record|
       link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
     end
     column :doc_date
@@ -21,9 +21,6 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
     attributes_table do
       row :id
       row :business_partner
-      row :sales_person do |record|
-        link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
-      end
       row :doc_date
       row :open_date
       row :pred_date
@@ -41,6 +38,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
           div :class => "attributes_table" do
             table do
               tr do
+                th do "Owner" end
                 th do "Line num" end
                 th do "Line status" end
                 th do "Open date" end
@@ -52,6 +50,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
               tbody do
                 r.sales_opportunity_items.each do |ri|
                   tr do
+                    td do ri.owner.nil? ? "" : ri.owner.employee.name end
                     td do ri.line_num end
                     td do ri.line_status end
                     td do ri.open_date end
@@ -73,10 +72,10 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
 
   form do |f|
     f.inputs "Document Header" do
-      f.input :doc_date
-      f.input :open_date
-      f.input :pred_date
-      f.input :close_date
+      f.input :doc_date,        :as => :datepicker
+      f.input :open_date,       :as => :datepicker
+      f.input :pred_date,       :as => :datepicker
+      f.input :close_date,      :as => :datepicker
       f.input :status,          :as => :select, :collection => %w(draft posted cancelled)
       f.input :memo
       f.input :business_partner
@@ -85,11 +84,12 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
 
     f.inputs "Item List" do
       f.has_many :sales_opportunity_items do |fi|
+        fi.input :owner
         fi.input :line_num
         fi.input :line_status
-        fi.input :open_date
-        fi.input :pred_date
-        fi.input :close_date
+        fi.input :open_date,    :as => :datepicker
+        fi.input :pred_date,    :as => :datepicker
+        fi.input :close_date,   :as => :datepicker
         fi.input :status,       :as => :select, :collection => %w(draft posted cancelled)
         fi.input :memo
       end
