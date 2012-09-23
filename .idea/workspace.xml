@@ -4,12 +4,9 @@
     <list default="true" id="3db3b8be-55cd-482c-82c5-2ef112d6a820" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/ar_down_payment_invoice.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20120918155800_create_ar_down_payment_invoices.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/ar_credit_memos.rb" afterPath="$PROJECT_DIR$/app/admin/ar_credit_memos.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/ar_dp_invoices.rb" afterPath="$PROJECT_DIR$/app/admin/ar_dp_invoices.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/ar_invoices.rb" afterPath="$PROJECT_DIR$/app/admin/ar_invoices.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/sales_orders.rb" afterPath="$PROJECT_DIR$/app/admin/sales_orders.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/sales_quotations.rb" afterPath="$PROJECT_DIR$/app/admin/sales_quotations.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/sales_returns.rb" afterPath="$PROJECT_DIR$/app/admin/sales_returns.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/items.rb" afterPath="$PROJECT_DIR$/app/admin/items.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/item.rb" afterPath="$PROJECT_DIR$/app/models/item.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="CRM.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,46 +29,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="20120923045930_create_trigger_calc_goods_received.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120923045930_create_trigger_calc_goods_received.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="107" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ar_credit_memos.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ar_credit_memos.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/admin/ar_credit_memos.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="26" selection-start="3764" selection-end="3764" vertical-scroll-proportion="0.73953485">
+            <state line="114" column="26" selection-start="3764" selection-end="3764" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ar_dp_invoices.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/ar_dp_invoices.rb">
+      <file leaf-file-name="20120923100923_create_trigger_update_credit_on_arinv.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20120923100923_create_trigger_update_credit_on_arinv.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="97" selection-start="3233" selection-end="3233" vertical-scroll-proportion="0.0">
+            <state line="30" column="108" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ar_invoices.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/ar_invoices.rb">
+      <file leaf-file-name="20120923114032_remove_last_sales_currency_from_items.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20120923114032_remove_last_sales_currency_from_items.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="50" selection-start="3452" selection-end="3452" vertical-scroll-proportion="0.0">
+            <state line="8" column="27" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assignments.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/assignments.rb">
+      <file leaf-file-name="item.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/item.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="11" column="27" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/admin/items.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="31" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.7953488">
               <folding />
             </state>
           </provider>
@@ -135,8 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/sales_return.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20120923035332_create_trigger_calc_dlv_order.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120923045202_create_trigger_calc_ar_credit_memo.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120923045914_create_trigger_calc_ardp_invoice.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120923045920_create_trigger_calc_ar_invoice.rb" />
@@ -151,12 +146,14 @@
         <option value="$PROJECT_DIR$/app/admin/sales_orders.rb" />
         <option value="$PROJECT_DIR$/app/admin/sales_quotations.rb" />
         <option value="$PROJECT_DIR$/app/admin/sales_returns.rb" />
+        <option value="$PROJECT_DIR$/app/models/item.rb" />
+        <option value="$PROJECT_DIR$/app/admin/items.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="170" />
-    <option name="y" value="136" />
+    <option name="x" value="43" />
+    <option name="y" value="295" />
     <option name="width" value="1391" />
     <option name="height" value="1028" />
   </component>
@@ -230,6 +227,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -694,7 +709,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="170" y="136" width="1391" height="1028" extended-state="0" />
+    <frame x="43" y="295" width="1391" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -770,34 +785,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120923045914_create_trigger_calc_ardp_invoice.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="90" selection-end="1453" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120923045946_create_trigger_calc_sales_order.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="89" selection-end="1440" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120923045953_create_trigger_calc_sales_quotation.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="93" selection-end="1468" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120923050000_create_trigger_calc_sales_return.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="90" selection-end="1447" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20120923045936_create_trigger_calc_goods_returned.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="92" selection-end="883" vertical-scroll-proportion="0.0">
@@ -877,7 +864,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/ar_credit_memos.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="26" selection-start="3764" selection-end="3764" vertical-scroll-proportion="0.73953485">
+        <state line="114" column="26" selection-start="3764" selection-end="3764" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120923100923_create_trigger_update_credit_on_arinv.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="108" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120923114032_remove_last_sales_currency_from_items.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="27" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="27" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/items.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="31" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.7953488">
           <folding />
         </state>
       </provider>

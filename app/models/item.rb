@@ -2,10 +2,9 @@ class Item < ActiveRecord::Base
   self.table_name = "CRM.ITEMS"
   self.sequence_name = "CRM.ITEMS_SEQ"
 
-  attr_accessible :average_price, :committed, :group_id, :height, :last_purchase_currency, :last_purchase_date,
-                  :last_purchase_price, :last_sales_currency, :last_sales_date, :last_sales_price, :length,
-                  :max_quantity, :name, :on_hand, :on_order, :reorder_quantity, :status, :stock_value, :type,
-                  :unit, :weight, :width
+  attr_accessible :average_price, :committed, :group_id, :height, :last_purchase_date, :last_purchase_price,
+                  :last_sales_date, :last_sales_price, :length, :max_quantity, :name, :on_hand, :on_order,
+                  :reorder_quantity, :status, :stock_value, :type, :unit, :weight, :width
 
   has_many :goods_received_items
   has_many :goods_returned_items

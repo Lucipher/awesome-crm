@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923100923) do
+ActiveRecord::Schema.define(:version => 20120923114116) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -282,30 +282,28 @@ ActiveRecord::Schema.define(:version => 20120923100923) do
   end
 
   create_table "items", :force => true do |t|
-    t.string   "name",                   :limit => 100
-    t.string   "status",                 :limit => 20
-    t.string   "type",                   :limit => 20
-    t.string   "unit",                   :limit => 20
-    t.decimal  "weight",                                :precision => 19, :scale => 6
-    t.decimal  "length",                                :precision => 19, :scale => 6
-    t.decimal  "width",                                 :precision => 19, :scale => 6
-    t.decimal  "height",                                :precision => 19, :scale => 6
-    t.integer  "group_id",                              :precision => 38, :scale => 0
-    t.decimal  "on_hand",                               :precision => 19, :scale => 6, :default => 0.0
-    t.decimal  "committed",                             :precision => 19, :scale => 6, :default => 0.0
-    t.decimal  "on_order",                              :precision => 19, :scale => 6, :default => 0.0
-    t.decimal  "max_quantity",                          :precision => 19, :scale => 6
-    t.decimal  "reorder_quantity",                      :precision => 19, :scale => 6
-    t.decimal  "last_purchase_price",                   :precision => 19, :scale => 6
-    t.string   "last_purchase_currency", :limit => 3
+    t.string   "name",                :limit => 100
+    t.string   "status",              :limit => 20
+    t.string   "type",                :limit => 20
+    t.string   "unit",                :limit => 20
+    t.decimal  "weight",                             :precision => 19, :scale => 6
+    t.decimal  "length",                             :precision => 19, :scale => 6
+    t.decimal  "width",                              :precision => 19, :scale => 6
+    t.decimal  "height",                             :precision => 19, :scale => 6
+    t.integer  "group_id",                           :precision => 38, :scale => 0
+    t.decimal  "on_hand",                            :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "committed",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "on_order",                           :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "max_quantity",                       :precision => 19, :scale => 6
+    t.decimal  "reorder_quantity",                   :precision => 19, :scale => 6
+    t.decimal  "last_purchase_price",                :precision => 19, :scale => 6
     t.datetime "last_purchase_date"
-    t.decimal  "last_sales_price",                      :precision => 19, :scale => 6
-    t.string   "last_sales_currency",    :limit => 3
+    t.decimal  "last_sales_price",                   :precision => 19, :scale => 6
     t.datetime "last_sales_date"
-    t.decimal  "average_price",                         :precision => 19, :scale => 6
-    t.decimal  "stock_value",                           :precision => 19, :scale => 6, :default => 0.0
-    t.datetime "created_at",                                                                            :null => false
-    t.datetime "updated_at",                                                                            :null => false
+    t.decimal  "average_price",                      :precision => 19, :scale => 6
+    t.decimal  "stock_value",                        :precision => 19, :scale => 6, :default => 0.0
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "job_titles", :force => true do |t|

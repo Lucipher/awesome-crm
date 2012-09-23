@@ -33,10 +33,8 @@ ActiveAdmin.register Item, :namespace => false do
       row :max_quantity
       row :reorder_quantity
       row :last_purchase_price
-      row :last_purchase_currency
       row :last_purchase_date
       row :last_sales_price
-      row :last_sales_currency
       row :last_sales_date
       row :average_price
       row :stock_value
@@ -58,14 +56,6 @@ ActiveAdmin.register Item, :namespace => false do
       f.input :height
       f.input :max_quantity
       f.input :reorder_quantity
-      f.input :last_purchase_price
-      f.input :last_purchase_currency
-      f.input :last_purchase_date
-      f.input :last_sales_price
-      f.input :last_sales_currency
-      f.input :last_sales_date
-      f.input :average_price
-      f.input :stock_value
     end
     f.buttons
   end
