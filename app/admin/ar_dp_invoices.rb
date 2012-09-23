@@ -11,7 +11,7 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
     column :due_date
     column :shipping_date
     column :grand_total
-    column :status
+    column("Status")      { |record| status_tag(record.status) }
 
     default_actions
   end
@@ -24,7 +24,7 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
         link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
       end
       row :type
-      row :status
+      row("Status")      { |record| status_tag(record.status) }
       row :date
       row :due_date
       row :shipping_date
@@ -47,6 +47,7 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
             table do
               tr do
                 th do "Item" end
+                th do "SO Ref" end
                 th do "Line num" end
                 th do "Line status" end
                 th do "Quantity" end
@@ -64,6 +65,7 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
                 r.ar_dp_invoice_items.each do |ri|
                   tr do
                     td do ri.item.name end
+                    td do ri.ref ? ri.ref.id : "" end
                     td do ri.line_num end
                     td do ri.line_status end
                     td do ri.quantity end

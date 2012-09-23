@@ -7,7 +7,8 @@ class SalesOpportunity < ActiveRecord::Base
 
   belongs_to :business_partner
   belongs_to :sales_person
-  has_many :sales_opportunity_items
+  has_many :sales_opportunity_items, :dependent => :destroy
+  has_many :items, :through => :sales_opportunity_items
 
   accepts_nested_attributes_for :sales_opportunity_items
 

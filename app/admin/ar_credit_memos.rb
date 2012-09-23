@@ -11,7 +11,7 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
     column :due_date
     column :shipping_date
     column :grand_total
-    column :status
+    column("Status")      { |record| status_tag(record.status) }
 
     default_actions
   end
@@ -24,7 +24,7 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
         link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
       end
       row :type
-      row :status
+      row("Status")      { |record| status_tag(record.status) }
       row :date
       row :due_date
       row :shipping_date
@@ -47,6 +47,7 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
             table do
               tr do
                 th do "Item" end
+                th do "SR Ref" end
                 th do "Line num" end
                 th do "Line status" end
                 th do "Quantity" end
@@ -64,6 +65,7 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
                 r.ar_credit_memo_items.each do |ri|
                   tr do
                     td do ri.item.name end
+                    td do ri.ref ? ri.ref.id : "" end
                     td do ri.line_num end
                     td do ri.line_status end
                     td do ri.quantity end

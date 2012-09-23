@@ -12,7 +12,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
     column :open_date
     column :pred_date
     column :close_date
-    column :status
+    column("Status")      { |record| status_tag(record.status) }
 
     default_actions
   end
@@ -28,7 +28,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
       row :open_date
       row :pred_date
       row :close_date
-      row :status
+      row("Status")      { |record| status_tag(record.status) }
       row :memo
       row :created_at
       row :updated_at

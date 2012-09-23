@@ -11,7 +11,7 @@ ActiveAdmin.register SalesOrder, :namespace => false do
     column :due_date
     column :shipping_date
     column :grand_total
-    column :status
+    column("Status")      { |record| status_tag(record.status) }
 
     default_actions
   end
@@ -24,7 +24,7 @@ ActiveAdmin.register SalesOrder, :namespace => false do
         link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
       end
       row :type
-      row :status
+      row("Status")      { |record| status_tag(record.status) }
       row :date
       row :due_date
       row :shipping_date
@@ -47,6 +47,7 @@ ActiveAdmin.register SalesOrder, :namespace => false do
             table do
               tr do
                 th do "Item" end
+                th do "SQI Ref" end
                 th do "Line num" end
                 th do "Line status" end
                 th do "Quantity" end
@@ -64,6 +65,7 @@ ActiveAdmin.register SalesOrder, :namespace => false do
                 r.sales_order_items.each do |ri|
                   tr do
                     td do ri.item.name end
+                    td do ri.ref ? ri.ref.id : "" end
                     td do ri.line_num end
                     td do ri.line_status end
                     td do ri.quantity end
@@ -131,12 +133,12 @@ ActiveAdmin.register SalesOrder, :namespace => false do
   end
 
   member_action :create_delivery_order, :method => :post do
-    sales_order = SalesOrder.find(params[:id])
-    delivery_order = DeliveryOrder.copy_from(sales_order)
+    src = SalesOrder.find(params[:id])
+    dst = DeliveryOrder.copy_from(src)
 
-    if delivery_order.save
+    if dst.save
       flash[:notice] = "Delivery order created successfully."
-      redirect_to delivery_order
+      redirect_to dst
     else
       flash.now[:error] = "Failed to create delivery order."
     end
@@ -144,6 +146,22 @@ ActiveAdmin.register SalesOrder, :namespace => false do
 
   action_item :only => :show do
     link_to('Create Delivery Order', create_delivery_order_sales_order_path(sales_order), :method => :post)
+  end
+
+  member_action :create_ar_dp_invoice, :method => :post do
+    src = SalesOrder.find(params[:id])
+    dst = ArDpInvoice.copy_from(src)
+
+    if dst.save
+      flash[:notice] = "AR Down Payment Invoice created successfully."
+      redirect_to ar_down_payment_invoice_path(dst)
+    else
+      flash.now[:error] = "Failed to create AR DP Invoice."
+    end
+  end
+
+  action_item :only => :show do
+    link_to('Create AR DP Invoice', create_ar_dp_invoice_sales_order_path(sales_order), :method => :post)
   end
 
 end

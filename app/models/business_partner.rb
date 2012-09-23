@@ -16,6 +16,7 @@ class BusinessPartner < ActiveRecord::Base
   has_many :ar_credit_memos
   has_many :ar_down_payment_invoices
   has_many :assignments
+  has_many :sales_persons, :through => :assignments
 
   validates_presence_of :name
 

@@ -11,7 +11,7 @@ ActiveAdmin.register DeliveryOrder, :namespace => false do
     column :due_date
     column :shipping_date
     column :grand_total
-    column :status
+    column("Status")      { |record| status_tag(record.status) }
 
     default_actions
   end
@@ -24,7 +24,7 @@ ActiveAdmin.register DeliveryOrder, :namespace => false do
         link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
       end
       row :type
-      row :status
+      row("Status")      { |record| status_tag(record.status) }
       row :date
       row :due_date
       row :shipping_date
@@ -47,6 +47,7 @@ ActiveAdmin.register DeliveryOrder, :namespace => false do
             table do
               tr do
                 th do "Item" end
+                th do "SO Ref" end
                 th do "Line num" end
                 th do "Line status" end
                 th do "Quantity" end
@@ -64,6 +65,7 @@ ActiveAdmin.register DeliveryOrder, :namespace => false do
                 r.delivery_order_items.each do |ri|
                   tr do
                     td do ri.item.name end
+                    td do ri.ref ? ri.ref.id : "" end
                     td do ri.line_num end
                     td do ri.line_status end
                     td do ri.quantity end
@@ -128,5 +130,37 @@ ActiveAdmin.register DeliveryOrder, :namespace => false do
     end
 
     f.buttons
+  end
+
+  member_action :create_ar_invoice, :method => :post do
+    src = DeliveryOrder.find(params[:id])
+    dst = ArInvoice.copy_from(src)
+
+    if dst.save
+      flash[:notice] = "AR Invoice created successfully."
+      redirect_to dst
+    else
+      flash.now[:error] = "Failed to create AR Invoice."
+    end
+  end
+
+  action_item :only => :show do
+    link_to('Create AR Invoice', create_ar_invoice_delivery_order_path(delivery_order), :method => :post)
+  end
+
+  member_action :create_sales_return, :method => :post do
+    src = DeliveryOrder.find(params[:id])
+    dst = SalesReturn.copy_from(src)
+
+    if dst.save
+      flash[:notice] = "Sales Return created successfully."
+      redirect_to dst
+    else
+      flash.now[:error] = "Failed to create Sales Return."
+    end
+  end
+
+  action_item :only => :show do
+    link_to('Create Sales Return', create_sales_return_delivery_order_path(delivery_order), :method => :post)
   end
 end

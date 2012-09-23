@@ -11,7 +11,7 @@ ActiveAdmin.register SalesReturn, :namespace => false do
     column :due_date
     column :shipping_date
     column :grand_total
-    column :status
+    column("Status")      { |record| status_tag(record.status) }
 
     default_actions
   end
@@ -24,7 +24,7 @@ ActiveAdmin.register SalesReturn, :namespace => false do
         link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
       end
       row :type
-      row :status
+      row("Status")      { |record| status_tag(record.status) }
       row :date
       row :due_date
       row :shipping_date
@@ -47,6 +47,7 @@ ActiveAdmin.register SalesReturn, :namespace => false do
             table do
               tr do
                 th do "Item" end
+                th do "DO Ref" end
                 th do "Line num" end
                 th do "Line status" end
                 th do "Quantity" end
@@ -64,6 +65,7 @@ ActiveAdmin.register SalesReturn, :namespace => false do
                 r.sales_return_items.each do |ri|
                   tr do
                     td do ri.item.name end
+                    td do ri.ref ? ri.ref.id : "" end
                     td do ri.line_num end
                     td do ri.line_status end
                     td do ri.quantity end
@@ -128,5 +130,21 @@ ActiveAdmin.register SalesReturn, :namespace => false do
     end
 
     f.buttons
+  end
+
+  member_action :create_ar_credit_memo, :method => :post do
+    src = SalesReturn.find(params[:id])
+    dst = ArCreditMemo.copy_from(src)
+
+    if dst.save
+      flash[:notice] = "AR Credit Memo created successfully."
+      redirect_to dst
+    else
+      flash.now[:error] = "Failed to create AR Credit Memo."
+    end
+  end
+
+  action_item :only => :show do
+    link_to('Create AR Credit Memo', create_ar_credit_memo_sales_return_path(sales_return), :method => :post)
   end
 end

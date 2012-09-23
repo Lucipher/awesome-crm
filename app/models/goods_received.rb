@@ -7,6 +7,7 @@ class GoodsReceived < ActiveRecord::Base
 
   belongs_to :employee
   has_many :goods_received_items, :dependent => :destroy
+  has_many :items, :through => :goods_received_items
 
   accepts_nested_attributes_for :goods_received_items
 

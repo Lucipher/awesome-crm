@@ -9,38 +9,39 @@ class DeliveryOrder < ActiveRecord::Base
   belongs_to :business_partner
   belongs_to :sales_person
 
-  has_many :delivery_order_items
+  has_many :delivery_order_items, :dependent => :destroy
+  has_many :items, :through => :delivery_order_items
 
   accepts_nested_attributes_for :delivery_order_items
 
   validates_presence_of :business_partner, :sales_person
 
-  def self.copy_from(sales_order)
-    delivery_order = DeliveryOrder.new
+  def self.copy_from(src)
+    inst = DeliveryOrder.new
 
-    delivery_order.business_partner   = sales_order.business_partner
-    delivery_order.currency           = sales_order.currency
-    delivery_order.date               = sales_order.date
-    delivery_order.disc_rate          = sales_order.disc_rate
-    delivery_order.disc_total         = sales_order.disc_total
-    delivery_order.due_date           = sales_order.due_date
-    delivery_order.grand_total        = sales_order.grand_total
-    delivery_order.rate               = sales_order.rate
-    delivery_order.remarks            = sales_order.remarks
-    delivery_order.sales_person       = sales_order.sales_person
-    delivery_order.shipping_date      = sales_order.shipping_date
-    delivery_order.status             = sales_order.status
-    delivery_order.tax_rate           = sales_order.tax_rate
-    delivery_order.tax_total          = sales_order.tax_total
-    delivery_order.total              = sales_order.total
-    delivery_order.type               = sales_order.type
+    inst.business_partner   = src.business_partner
+    inst.currency           = src.currency
+    inst.date               = src.date
+    inst.disc_rate          = src.disc_rate
+    inst.disc_total         = src.disc_total
+    inst.due_date           = src.due_date
+    inst.grand_total        = src.grand_total
+    inst.rate               = src.rate
+    inst.remarks            = src.remarks
+    inst.sales_person       = src.sales_person
+    inst.shipping_date      = src.shipping_date
+    inst.status             = 'draft'
+    inst.tax_rate           = src.tax_rate
+    inst.tax_total          = src.tax_total
+    inst.total              = src.total
+    inst.type               = src.type
 
-    sales_order.sales_order_items.each do |sales_order_item|
-      delivery_order_item = DeliveryOrderItem.copy_from(sales_order_item)
-      delivery_order_item.delivery_order = delivery_order
-      delivery_order.delivery_order_items << delivery_order_item
+    src.sales_order_items.each do |src_item|
+      inst_item = DeliveryOrderItem.copy_from(src_item)
+      inst_item.delivery_order = inst
+      inst.delivery_order_items << inst_item
     end
 
-    delivery_order
+    inst
   end
 end

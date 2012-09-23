@@ -9,7 +9,7 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
     column :doc_due_date
     column :doc_currency
     column :doc_total
-    column :doc_status
+    column("Status")      { |record| status_tag(record.doc_status) }
 
     default_actions
   end

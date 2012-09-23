@@ -7,6 +7,29 @@ class SalesReturnItem < ActiveRecord::Base
 
   belongs_to :sales_return
   belongs_to :item
+  belongs_to :ref, :foreign_key => 'ref_id', :class_name => 'DeliveryOrderItem'
 
   validates_presence_of :item, :quantity
+
+  def self.copy_from(src)
+    item = SalesReturnItem.new
+
+    item.ref           = src
+    item.currency      = src.currency
+    item.disc_rate     = src.disc_rate
+    item.disc_total    = src.disc_total
+    item.grand_total   = src.grand_total
+    item.item          = src.item
+    item.line_num      = src.line_num
+    item.line_status   = src.line_status
+    item.line_total    = src.line_total
+    item.price         = src.price
+    item.quantity      = src.quantity
+    item.rate          = src.rate
+    item.remarks       = src.remarks
+    item.tax_rate      = src.tax_rate
+    item.tax_total     = src.tax_total
+
+    item
+  end
 end

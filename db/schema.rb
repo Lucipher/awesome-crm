@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120922165609) do
+ActiveRecord::Schema.define(:version => 20120923011229) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120922165609) do
     t.string   "remarks",           :limit => 100
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
+    t.integer  "ref_id",                           :precision => 38, :scale => 0
   end
 
   create_table "ar_credit_memos", :force => true do |t|
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20120922165609) do
     t.string   "remarks",          :limit => 100
     t.datetime "created_at",                                                     :null => false
     t.datetime "updated_at",                                                     :null => false
+    t.integer  "ref_id",                          :precision => 38, :scale => 0
   end
 
   create_table "ar_dp_invoices", :force => true do |t|
@@ -128,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20120922165609) do
     t.string   "remarks",       :limit => 100
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
+    t.integer  "ref_id",                       :precision => 38, :scale => 0
   end
 
   create_table "ar_invoices", :force => true do |t|
@@ -197,6 +200,7 @@ ActiveRecord::Schema.define(:version => 20120922165609) do
     t.string   "remarks",           :limit => 100
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
+    t.integer  "ref_id",                           :precision => 38, :scale => 0
   end
 
   create_table "delivery_orders", :force => true do |t|
@@ -389,6 +393,7 @@ ActiveRecord::Schema.define(:version => 20120922165609) do
     t.datetime "created_at",                                                   :null => false
     t.datetime "updated_at",                                                   :null => false
     t.integer  "sales_order_id",                :precision => 38, :scale => 0
+    t.integer  "ref_id",                        :precision => 38, :scale => 0
   end
 
   create_table "sales_orders", :force => true do |t|
@@ -483,6 +488,7 @@ ActiveRecord::Schema.define(:version => 20120922165609) do
     t.string   "remarks",         :limit => 100
     t.datetime "created_at",                                                    :null => false
     t.datetime "updated_at",                                                    :null => false
+    t.integer  "ref_id",                         :precision => 38, :scale => 0
   end
 
   create_table "sales_returns", :force => true do |t|

@@ -8,38 +8,39 @@ class SalesOrder < ActiveRecord::Base
 
   belongs_to :business_partner
   belongs_to :sales_person
-  has_many :sales_order_items
+  has_many :sales_order_items, :dependent => :destroy
+  has_many :items, :through => :sales_order_items
 
   accepts_nested_attributes_for :sales_order_items
 
   validates_presence_of :business_partner, :sales_person
 
-  def self.copy_from(sales_quotation)
-    sales_order = SalesOrder.new
+  def self.copy_from(src)
+    inst = SalesOrder.new
 
-    sales_order.business_partner   = sales_quotation.business_partner
-    sales_order.currency           = sales_quotation.currency
-    sales_order.date               = sales_quotation.date
-    sales_order.disc_rate          = sales_quotation.disc_rate
-    sales_order.disc_total         = sales_quotation.disc_total
-    sales_order.due_date           = sales_quotation.due_date
-    sales_order.grand_total        = sales_quotation.grand_total
-    sales_order.rate               = sales_quotation.rate
-    sales_order.remarks            = sales_quotation.remarks
-    sales_order.sales_person       = sales_quotation.sales_person
-    sales_order.shipping_date      = sales_quotation.shipping_date
-    sales_order.status             = sales_quotation.status
-    sales_order.tax_rate           = sales_quotation.tax_rate
-    sales_order.tax_total          = sales_quotation.tax_total
-    sales_order.total              = sales_quotation.total
-    sales_order.type               = sales_quotation.type
+    inst.business_partner   = src.business_partner
+    inst.currency           = src.currency
+    inst.date               = src.date
+    inst.disc_rate          = src.disc_rate
+    inst.disc_total         = src.disc_total
+    inst.due_date           = src.due_date
+    inst.grand_total        = src.grand_total
+    inst.rate               = src.rate
+    inst.remarks            = src.remarks
+    inst.sales_person       = src.sales_person
+    inst.shipping_date      = src.shipping_date
+    inst.status             = 'draft'
+    inst.tax_rate           = src.tax_rate
+    inst.tax_total          = src.tax_total
+    inst.total              = src.total
+    inst.type               = src.type
 
-    sales_quotation.sales_quotation_items.each do |sales_quotation_item|
-      sales_order_item = SalesOrderItem.copy_from(sales_quotation_item)
-      sales_order_item.sales_order = sales_order
-      sales_order.sales_order_items << sales_order_item
+    src.sales_quotation_items.each do |src_item|
+      inst_item = SalesOrderItem.copy_from(src_item)
+      inst_item.sales_order = inst
+      inst.sales_order_items << inst_item
     end
 
-    sales_order
+    inst
   end
 end

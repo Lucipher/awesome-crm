@@ -9,7 +9,8 @@ class SalesQuotation < ActiveRecord::Base
   belongs_to :business_partner
   belongs_to :sales_person
 
-  has_many :sales_quotation_items
+  has_many :sales_quotation_items, :dependent => :destroy
+  has_many :items, :through => :sales_quotation_items
 
   accepts_nested_attributes_for :sales_quotation_items
 

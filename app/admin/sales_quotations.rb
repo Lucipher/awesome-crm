@@ -11,7 +11,7 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
     column :due_date
     column :shipping_date
     column :grand_total
-    column :status
+    column("Status")      { |record| status_tag(record.status) }
 
     default_actions
   end
@@ -24,7 +24,7 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
         link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
       end
       row :type
-      row :status
+      row("Status")      { |record| status_tag(record.status) }
       row :date
       row :due_date
       row :shipping_date
@@ -131,12 +131,12 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
   end
 
   member_action :create_sales_order, :method => :post do
-    sales_quotation = SalesQuotation.find(params[:id])
-    sales_order = SalesOrder.copy_from(sales_quotation)
+    src = SalesQuotation.find(params[:id])
+    dst = SalesOrder.copy_from(src)
 
-    if sales_order.save
+    if dst.save
       flash[:notice] = "Sales order created successfully."
-      redirect_to sales_order
+      redirect_to dst
     else
       flash.now[:error] = "Failed to create sales order."
     end

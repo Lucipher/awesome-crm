@@ -3,32 +3,34 @@ class SalesOrderItem < ActiveRecord::Base
   self.sequence_name = "CRM.SALES_ORDER_ITEMS_SEQ"
 
   attr_accessible :currency, :disc_rate, :disc_total, :grand_total, :item_id, :line_num, :line_status, :line_total,
-                  :price, :quantity, :rate, :remarks, :tax_rate, :tax_total, :sales_order_id
+                  :price, :quantity, :rate, :remarks, :tax_rate, :tax_total, :sales_order_id, :ref_id
 
   belongs_to :item
   belongs_to :sales_order
+  belongs_to :ref, :foreign_key => 'ref_id', :class_name => 'SalesQuotationItem'
 
   validates_presence_of :item, :quantity
 
-  def self.copy_from(sales_quotation_item)
-    sales_order_item = SalesOrderItem.new
+  def self.copy_from(src)
+    item = SalesOrderItem.new
 
-    sales_order_item.currency      = sales_quotation_item.currency
-    sales_order_item.disc_rate     = sales_quotation_item.disc_rate
-    sales_order_item.disc_total    = sales_quotation_item.disc_total
-    sales_order_item.grand_total   = sales_quotation_item.grand_total
-    sales_order_item.item          = sales_quotation_item.item
-    sales_order_item.line_num      = sales_quotation_item.line_num
-    sales_order_item.line_status   = sales_quotation_item.line_status
-    sales_order_item.line_total    = sales_quotation_item.line_total
-    sales_order_item.price         = sales_quotation_item.price
-    sales_order_item.quantity      = sales_quotation_item.quantity
-    sales_order_item.rate          = sales_quotation_item.rate
-    sales_order_item.remarks       = sales_quotation_item.remarks
-    sales_order_item.tax_rate      = sales_quotation_item.tax_rate
-    sales_order_item.tax_total     = sales_quotation_item.tax_total
+    item.ref           = src
+    item.currency      = src.currency
+    item.disc_rate     = src.disc_rate
+    item.disc_total    = src.disc_total
+    item.grand_total   = src.grand_total
+    item.item          = src.item
+    item.line_num      = src.line_num
+    item.line_status   = src.line_status
+    item.line_total    = src.line_total
+    item.price         = src.price
+    item.quantity      = src.quantity
+    item.rate          = src.rate
+    item.remarks       = src.remarks
+    item.tax_rate      = src.tax_rate
+    item.tax_total     = src.tax_total
 
-    sales_order_item
+    item
   end
 
 end
