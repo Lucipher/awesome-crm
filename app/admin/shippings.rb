@@ -1,4 +1,6 @@
 ActiveAdmin.register Shipping, :namespace => false do
+  menu :parent => "Partners"
+
   index do
     column :id
     column :name

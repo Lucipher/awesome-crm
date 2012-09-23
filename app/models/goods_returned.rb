@@ -2,7 +2,7 @@ class GoodsReturned < ActiveRecord::Base
   self.table_name = "CRM.GOODS_RETURNEDS"
   self.sequence_name = "CRM.GOODS_RETURNEDS_SEQ"
 
-  attr_accessible :doc_currency, :doc_date, :doc_due_date, :doc_rate, :doc_status, :doc_total, :doc_total_fc,
+  attr_accessible :doc_date, :doc_due_date, :doc_status, :doc_total,
                   :doc_type, :employee_id, :remarks, :goods_returned_items_attributes
 
   belongs_to :employee

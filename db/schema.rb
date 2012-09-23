@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923020211) do
+ActiveRecord::Schema.define(:version => 20120923100923) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                          :precision => 38, :scale => 0
     t.decimal  "quantity",                         :precision => 19, :scale => 6
     t.decimal  "price",                            :precision => 19, :scale => 6
-    t.string   "currency",          :limit => 3
-    t.decimal  "rate",                             :precision => 19, :scale => 6
     t.decimal  "line_total",                       :precision => 19, :scale => 6
     t.decimal  "disc_rate",                        :precision => 19, :scale => 6
     t.decimal  "disc_total",                       :precision => 19, :scale => 6
@@ -55,19 +53,15 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.datetime "date"
     t.datetime "due_date"
     t.datetime "shipping_date"
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "total",                              :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
-    t.decimal  "disc_total",                         :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "ar_dp_invoice_items", :force => true do |t|
@@ -77,8 +71,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                         :precision => 38, :scale => 0
     t.decimal  "quantity",                        :precision => 19, :scale => 6
     t.decimal  "price",                           :precision => 19, :scale => 6
-    t.string   "currency",         :limit => 3
-    t.decimal  "rate",                            :precision => 19, :scale => 6
     t.decimal  "line_total",                      :precision => 19, :scale => 6
     t.decimal  "disc_rate",                       :precision => 19, :scale => 6
     t.decimal  "disc_total",                      :precision => 19, :scale => 6
@@ -97,19 +89,15 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.datetime "date"
     t.datetime "due_date"
     t.datetime "shipping_date"
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "total",                              :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
-    t.decimal  "disc_total",                         :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "ar_invoice_items", :force => true do |t|
@@ -119,8 +107,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                      :precision => 38, :scale => 0
     t.decimal  "quantity",                     :precision => 19, :scale => 6
     t.decimal  "price",                        :precision => 19, :scale => 6
-    t.string   "currency",      :limit => 3
-    t.decimal  "rate",                         :precision => 19, :scale => 6
     t.decimal  "line_total",                   :precision => 19, :scale => 6
     t.decimal  "disc_rate",                    :precision => 19, :scale => 6
     t.decimal  "disc_total",                   :precision => 19, :scale => 6
@@ -139,19 +125,15 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.datetime "date"
     t.datetime "due_date"
     t.datetime "shipping_date"
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "total",                              :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
-    t.decimal  "disc_total",                         :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "assignments", :force => true do |t|
@@ -189,8 +171,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                          :precision => 38, :scale => 0
     t.decimal  "quantity",                         :precision => 19, :scale => 6
     t.decimal  "price",                            :precision => 19, :scale => 6
-    t.string   "currency",          :limit => 3
-    t.decimal  "rate",                             :precision => 19, :scale => 6
     t.decimal  "line_total",                       :precision => 19, :scale => 6
     t.decimal  "disc_rate",                        :precision => 19, :scale => 6
     t.decimal  "disc_total",                       :precision => 19, :scale => 6
@@ -209,19 +189,15 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.datetime "date"
     t.datetime "due_date"
     t.datetime "shipping_date"
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "total",                              :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
-    t.decimal  "disc_total",                         :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "departments", :force => true do |t|
@@ -251,8 +227,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                          :precision => 38, :scale => 0
     t.decimal  "quantity",                         :precision => 19, :scale => 6
     t.decimal  "price",                            :precision => 19, :scale => 6
-    t.string   "currency",          :limit => 3
-    t.decimal  "rate",                             :precision => 19, :scale => 6
     t.decimal  "line_total",                       :precision => 19, :scale => 6
     t.decimal  "tax_rate",                         :precision => 19, :scale => 6
     t.decimal  "tax_total",                        :precision => 19, :scale => 6
@@ -267,14 +241,11 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.string   "doc_status",   :limit => 20
     t.datetime "doc_date"
     t.datetime "doc_due_date"
-    t.string   "doc_currency", :limit => 3
-    t.decimal  "doc_rate",                    :precision => 19, :scale => 6
-    t.decimal  "doc_total",                   :precision => 19, :scale => 6
-    t.decimal  "doc_total_fc",                :precision => 19, :scale => 6
+    t.decimal  "doc_total",                   :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",      :limit => 100
     t.integer  "employee_id",                 :precision => 38, :scale => 0
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
+    t.datetime "created_at",                                                                  :null => false
+    t.datetime "updated_at",                                                                  :null => false
   end
 
   create_table "goods_returned_items", :force => true do |t|
@@ -282,8 +253,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                          :precision => 38, :scale => 0
     t.decimal  "quantity",                         :precision => 19, :scale => 6
     t.decimal  "price",                            :precision => 19, :scale => 6
-    t.string   "currency",          :limit => 3
-    t.decimal  "rate",                             :precision => 19, :scale => 6
     t.decimal  "line_total",                       :precision => 19, :scale => 6
     t.decimal  "tax_rate",                         :precision => 19, :scale => 6
     t.decimal  "tax_total",                        :precision => 19, :scale => 6
@@ -298,14 +267,11 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.string   "doc_status",   :limit => 20
     t.datetime "doc_date"
     t.datetime "doc_due_date"
-    t.string   "doc_currency", :limit => 3
-    t.decimal  "doc_rate",                    :precision => 19, :scale => 6
-    t.decimal  "doc_total",                   :precision => 19, :scale => 6
-    t.decimal  "doc_total_fc",                :precision => 19, :scale => 6
+    t.decimal  "doc_total",                   :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",      :limit => 100
     t.integer  "employee_id",                 :precision => 38, :scale => 0
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
+    t.datetime "created_at",                                                                  :null => false
+    t.datetime "updated_at",                                                                  :null => false
   end
 
   create_table "groups", :force => true do |t|
@@ -382,8 +348,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                       :precision => 38, :scale => 0
     t.decimal  "quantity",                      :precision => 19, :scale => 6
     t.decimal  "price",                         :precision => 19, :scale => 6
-    t.string   "currency",       :limit => 3
-    t.decimal  "rate",                          :precision => 19, :scale => 6
     t.decimal  "line_total",                    :precision => 19, :scale => 6
     t.decimal  "disc_rate",                     :precision => 19, :scale => 6
     t.decimal  "disc_total",                    :precision => 19, :scale => 6
@@ -403,19 +367,15 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.datetime "date"
     t.datetime "due_date"
     t.datetime "shipping_date"
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "total",                              :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
-    t.decimal  "disc_total",                         :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "sales_people", :force => true do |t|
@@ -437,8 +397,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                           :precision => 38, :scale => 0
     t.decimal  "quantity",                          :precision => 19, :scale => 6
     t.decimal  "price",                             :precision => 19, :scale => 6
-    t.string   "currency",           :limit => 3
-    t.decimal  "rate",                              :precision => 19, :scale => 6
     t.decimal  "line_total",                        :precision => 19, :scale => 6
     t.decimal  "disc_rate",                         :precision => 19, :scale => 6
     t.decimal  "disc_total",                        :precision => 19, :scale => 6
@@ -456,19 +414,15 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.datetime "date"
     t.datetime "due_date"
     t.datetime "shipping_date"
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "total",                              :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
-    t.decimal  "disc_total",                         :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "sales_return_items", :force => true do |t|
@@ -478,8 +432,6 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.integer  "item_id",                        :precision => 38, :scale => 0
     t.decimal  "quantity",                       :precision => 19, :scale => 6
     t.decimal  "price",                          :precision => 19, :scale => 6
-    t.string   "currency",        :limit => 3
-    t.decimal  "rate",                           :precision => 19, :scale => 6
     t.decimal  "line_total",                     :precision => 19, :scale => 6
     t.decimal  "disc_rate",                      :precision => 19, :scale => 6
     t.decimal  "disc_total",                     :precision => 19, :scale => 6
@@ -498,19 +450,15 @@ ActiveRecord::Schema.define(:version => 20120923020211) do
     t.datetime "date"
     t.datetime "due_date"
     t.datetime "shipping_date"
-    t.string   "currency",            :limit => 3
-    t.decimal  "rate",                               :precision => 19, :scale => 6
-    t.decimal  "total",                              :precision => 19, :scale => 6
-    t.decimal  "disc_rate",                          :precision => 19, :scale => 6
-    t.decimal  "disc_total",                         :precision => 19, :scale => 6
-    t.decimal  "tax_rate",                           :precision => 19, :scale => 6
-    t.decimal  "tax_total",                          :precision => 19, :scale => 6
-    t.decimal  "grand_total",                        :precision => 19, :scale => 6
+    t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "disc_total",                         :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "tax_total",                          :precision => 19, :scale => 6, :default => 0.0
+    t.decimal  "grand_total",                        :precision => 19, :scale => 6, :default => 0.0
     t.string   "remarks",             :limit => 100
     t.integer  "business_partner_id",                :precision => 38, :scale => 0
     t.integer  "sales_person_id",                    :precision => 38, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
   end
 
   create_table "sessions", :force => true do |t|

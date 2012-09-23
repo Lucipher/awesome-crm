@@ -2,7 +2,8 @@ class BusinessPartner < ActiveRecord::Base
   self.table_name = "CRM.BUSINESS_PARTNERS"
   self.sequence_name = "CRM.BUSINESS_PARTNERS_SEQ"
 
-  attr_accessible :billing_address, :email, :name, :phone, :shipping_address, :business_partner_type_id, :shipping_id
+  attr_accessible :billing_address, :email, :name, :phone, :shipping_address, :business_partner_type_id, :shipping_id,
+                  :credit_limit, :credit_balance
 
   belongs_to :shipping
   belongs_to :business_partner_type

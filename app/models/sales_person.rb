@@ -2,7 +2,7 @@ class SalesPerson < ActiveRecord::Base
   self.table_name = "CRM.SALES_PEOPLE"
   self.sequence_name = "CRM.SALES_PEOPLE_SEQ"
 
-  attr_accessible :commission, :employee_id, :locked, :memo, :team_id
+  attr_accessible :commission, :employee_id, :locked, :memo, :team_id, :credit_limit, :credit_balance
 
   belongs_to :team
   belongs_to :employee

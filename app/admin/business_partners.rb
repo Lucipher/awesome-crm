@@ -9,7 +9,9 @@ ActiveAdmin.register BusinessPartner, :namespace => false do
     column :email, :sortable => false
     column :business_partner_type, :sortable => false
     column :shipping, :sortable => false
-    column :credit_balance
+    column :credit_balance do |rec|
+      number_to_currency rec.credit_balance, :unit => "$"
+    end
 
     default_actions
   end
@@ -24,8 +26,12 @@ ActiveAdmin.register BusinessPartner, :namespace => false do
       row :shipping_address
       row :business_partner_type
       row :shipping
-      row :credit_limit
-      row :credit_balance
+      row :credit_limit do |rec|
+        number_to_currency rec.credit_limit, :unit => "$"
+      end
+      row :credit_balance do |rec|
+        number_to_currency rec.credit_balance, :unit => "$"
+      end
       row :created_at
       row :updated_at
     end

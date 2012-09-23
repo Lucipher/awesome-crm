@@ -1,5 +1,6 @@
 ActiveAdmin.register SalesOpportunity, :namespace => false do
-  menu :parent => "Forms"
+  menu :label => "Opportunities"
+
   actions :all, :except => [:destroy]
 
   index do

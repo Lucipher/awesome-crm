@@ -7,8 +7,9 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
     column :employee
     column :doc_date
     column :doc_due_date
-    column :doc_currency
-    column :doc_total
+    column :doc_total do |rec|
+      number_to_currency rec.doc_total, :unit => "$"
+    end
     column("Status")      { |record| status_tag(record.doc_status) }
 
     default_actions
@@ -17,13 +18,12 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
   show do |r|
     attributes_table do
       row :doc_type
-      row :doc_status
+      row("Status")      { |record| status_tag(record.doc_status) }
       row :doc_date
       row :doc_due_date
-      row :doc_currency
-      row :doc_rate
-      row :doc_total
-      row :doc_total_fc
+      row :doc_total do |rec|
+        number_to_currency rec.doc_total, :unit => "$"
+      end
       row :remarks
       row :employee
       row :created_at
@@ -40,8 +40,6 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
                 th do "Item" end
                 th do "Quantity" end
                 th do "Price" end
-                th do "Currency" end
-                th do "Rate" end
                 th do "Line total" end
                 th do "Tax rate" end
                 th do "Tax total" end
@@ -53,13 +51,11 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
                   tr do
                     td do ri.item.name end
                     td do ri.quantity end
-                    td do ri.price end
-                    td do ri.currency end
-                    td do ri.rate end
-                    td do ri.line_total end
+                    td do number_to_currency ri.price,        :unit => "$" end
+                    td do number_to_currency ri.line_total,   :unit => "$" end
                     td do ri.tax_rate end
-                    td do ri.tax_total end
-                    td do ri.grand_total end
+                    td do number_to_currency ri.tax_total,    :unit => "$" end
+                    td do number_to_currency ri.grand_total,  :unit => "$" end
                     td do ri.remarks end
                   end
                 end
@@ -77,12 +73,8 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
     f.inputs "Document Header" do
       f.input :doc_type,      :label => "Type"
       f.input :doc_status,    :label => "Status",   :as => :select, :collection => %w(draft posted cancelled)
-      f.input :doc_date,      :label => "Date"
-      f.input :doc_due_date,  :label => "Due date"
-      f.input :doc_currency,  :label => "Currency"
-      f.input :doc_rate,      :label => "Rate"
-      f.input :doc_total,     :label => "Total"
-      f.input :doc_total_fc,  :label => "Total FC"
+      f.input :doc_date,      :label => "Date",     :as => :datepicker
+      f.input :doc_due_date,  :label => "Due date", :as => :datepicker
       f.input :remarks
       f.input :employee_id,                         :as => :hidden, :value => current_user.employee.id
     end
@@ -92,12 +84,7 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
         fi.input :item
         fi.input :quantity
         fi.input :price
-        fi.input :currency
-        fi.input :rate
-        fi.input :line_total
         fi.input :tax_rate
-        fi.input :tax_total
-        fi.input :grand_total
         fi.input :remarks
       end
     end

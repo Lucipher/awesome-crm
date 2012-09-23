@@ -2,20 +2,19 @@ class SalesOrderItem < ActiveRecord::Base
   self.table_name = "CRM.SALES_ORDER_ITEMS"
   self.sequence_name = "CRM.SALES_ORDER_ITEMS_SEQ"
 
-  attr_accessible :currency, :disc_rate, :disc_total, :grand_total, :item_id, :line_num, :line_status, :line_total,
-                  :price, :quantity, :rate, :remarks, :tax_rate, :tax_total, :sales_order_id, :ref_id
+  attr_accessible :disc_rate, :disc_total, :grand_total, :item_id, :line_num, :line_status, :line_total,
+                  :price, :quantity, :remarks, :tax_rate, :tax_total, :sales_order_id, :ref_id
 
   belongs_to :item
   belongs_to :sales_order
   belongs_to :ref, :foreign_key => 'ref_id', :class_name => 'SalesQuotationItem'
 
-  validates_presence_of :item, :quantity
+  validates_presence_of :item, :quantity, :price, :disc_rate, :tax_rate
 
   def self.copy_from(src)
     item = SalesOrderItem.new
 
     item.ref           = src
-    item.currency      = src.currency
     item.disc_rate     = src.disc_rate
     item.disc_total    = src.disc_total
     item.grand_total   = src.grand_total
@@ -25,7 +24,6 @@ class SalesOrderItem < ActiveRecord::Base
     item.line_total    = src.line_total
     item.price         = src.price
     item.quantity      = src.quantity
-    item.rate          = src.rate
     item.remarks       = src.remarks
     item.tax_rate      = src.tax_rate
     item.tax_total     = src.tax_total

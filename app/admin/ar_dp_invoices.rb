@@ -10,7 +10,9 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
     end
     column :due_date
     column :shipping_date
-    column :grand_total
+    column :grand_total do |rec|
+      number_to_currency rec.grand_total, :unit => "$"
+    end
     column("Status")      { |record| status_tag(record.status) }
 
     default_actions
@@ -28,14 +30,18 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
       row :date
       row :due_date
       row :shipping_date
-      row :currency
-      row :rate
-      row :total
-      row :disc_rate
-      row :disc_total
-      row :tax_rate
-      row :tax_total
-      row :grand_total
+      row :total do |rec|
+        number_to_currency rec.total, :unit => "$"
+      end
+      row :disc_total do |rec|
+        number_to_currency rec.disc_total, :unit => "$"
+      end
+      row :tax_total do |rec|
+        number_to_currency rec.tax_total, :unit => "$"
+      end
+      row :grand_total do |rec|
+        number_to_currency rec.grand_total, :unit => "$"
+      end
       row :remarks
     end
 
@@ -52,8 +58,6 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
                 th do "Line status" end
                 th do "Quantity" end
                 th do "Price" end
-                th do "Currency" end
-                th do "Rate" end
                 th do "Line total" end
                 th do "Disc rate" end
                 th do "Disc total" end
@@ -69,15 +73,13 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
                     td do ri.line_num end
                     td do ri.line_status end
                     td do ri.quantity end
-                    td do ri.price end
-                    td do ri.currency end
-                    td do ri.rate end
-                    td do ri.line_total end
+                    td do number_to_currency ri.price,        :unit => "$" end
+                    td do number_to_currency ri.line_total,   :unit => "$" end
                     td do ri.disc_rate end
-                    td do ri.disc_total end
+                    td do number_to_currency ri.disc_total,   :unit => "$" end
                     td do ri.tax_rate end
-                    td do ri.tax_total end
-                    td do ri.grand_total end
+                    td do number_to_currency ri.tax_total,    :unit => "$" end
+                    td do number_to_currency ri.grand_total,  :unit => "$" end
                   end
                 end
               end
@@ -102,9 +104,7 @@ ActiveAdmin.register ArDpInvoice, :as => "AR Down Payment Invoice", :namespace =
       f.input :currency
       f.input :rate
       f.input :total
-      f.input :disc_rate
       f.input :disc_total
-      f.input :tax_rate
       f.input :tax_total
       f.input :grand_total
       f.input :remarks
