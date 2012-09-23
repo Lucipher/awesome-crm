@@ -99,10 +99,6 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
       f.input :date,            :as => :datepicker
       f.input :due_date,        :as => :datepicker
       f.input :shipping_date,   :as => :datepicker
-      f.input :total
-      f.input :disc_total
-      f.input :tax_total
-      f.input :grand_total
       f.input :remarks
     end
 
@@ -113,12 +109,8 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
         fi.input :line_status
         fi.input :quantity
         fi.input :price
-        fi.input :line_total
         fi.input :disc_rate
-        fi.input :disc_total
         fi.input :tax_rate
-        fi.input :tax_total
-        fi.input :grand_total
         fi.input :remarks
       end
     end
