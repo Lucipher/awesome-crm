@@ -4,6 +4,7 @@ ActiveAdmin.register JobTitle, :namespace => false do
   index do
     column :id
     column :name
+    column :role_code
     column :remarks
 
     default_actions
@@ -13,6 +14,7 @@ ActiveAdmin.register JobTitle, :namespace => false do
     attributes_table do
       row :id
       row :name
+      row :role_code
       row :remarks
     end
   end
@@ -20,6 +22,7 @@ ActiveAdmin.register JobTitle, :namespace => false do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :role_code
       f.input :remarks,       :input_html => { :rows => 4 }
     end
     f.buttons

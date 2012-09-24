@@ -7,6 +7,9 @@ ActiveAdmin.register SalesPerson, :namespace => false do
     column :employee
     column :team
     column :commission
+    column :credit_limit do |rec|
+      number_to_currency rec.credit_limit, :unit => "$"
+    end
     column :credit_balance do |rec|
       number_to_currency rec.credit_balance, :unit => "$"
     end

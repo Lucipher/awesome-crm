@@ -9,6 +9,9 @@ ActiveAdmin.register BusinessPartner, :namespace => false do
     column :email, :sortable => false
     column :business_partner_type, :sortable => false
     column :shipping, :sortable => false
+    column :credit_limit do |rec|
+      number_to_currency rec.credit_limit, :unit => "$"
+    end
     column :credit_balance do |rec|
       number_to_currency rec.credit_balance, :unit => "$"
     end

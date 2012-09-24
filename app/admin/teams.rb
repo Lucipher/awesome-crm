@@ -5,7 +5,7 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
     column :id
     column :name
     column :manager do |record|
-      link_to record.manager.employee.name, employee_path(record.manager.employee)
+      record.manager.nil? ? "" : (link_to record.manager.employee.name, employee_path(record.manager.employee))
     end
     column :remarks
 
@@ -17,7 +17,7 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
       row :id
       row :name
       row :manager do |record|
-        link_to record.manager.employee.name, employee_path(record.manager.employee)
+        record.manager.nil? ? "" : (link_to record.manager.employee.name, employee_path(record.manager.employee))
       end
       row :remarks
     end
@@ -26,7 +26,7 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :manager
+      f.input :manager, :as => :select, :collection => Hash[SalesPerson.all.map{|p| [p.employee.name, p.id]}]
       f.input :remarks,       :input_html => { :rows => 4 }
     end
     f.buttons
