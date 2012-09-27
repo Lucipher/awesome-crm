@@ -1,8 +1,9 @@
 class SalesOrder < ActiveRecord::Base
-  self.table_name = "CRM.SALES_ORDERS"
+  self.table_name = "CRM.SALES_ORDERS_VIEW"
   self.sequence_name = "CRM.SALES_ORDERS_SEQ"
+  self.primary_key = "id"
 
-  attr_accessible :business_partner_id, :date, :disc_rate, :disc_total, :due_date, :grand_total,
+  attr_accessible :business_partner_id, :doc_date, :disc_rate, :disc_total, :due_date, :grand_total,
                   :remarks, :sales_person_id, :shipping_date, :status, :tax_rate, :tax_total, :total, :type,
                   :sales_order_items_attributes
 
@@ -15,11 +16,21 @@ class SalesOrder < ActiveRecord::Base
 
   validates_presence_of :business_partner, :sales_person
 
+  class << self # Class methods
+    alias :all_columns :columns
+    def columns
+      all_columns.reject { |c|
+        %w(partner_name partner_phone partner_billing_address partner_shipping_address partner_email partner_type sales_person_name shipping).include?(c.name)
+      }
+    end
+  end
+
   def self.copy_from(src)
     inst = SalesOrder.new
 
+    inst.id                 = SalesOrder.connection.select_value("SELECT crm.sales_orders_seq.nextval FROM DUAL")
     inst.business_partner   = src.business_partner
-    inst.date               = src.date
+    inst.doc_date           = src.doc_date
     inst.disc_total         = 0
     inst.due_date           = src.due_date
     inst.grand_total        = 0

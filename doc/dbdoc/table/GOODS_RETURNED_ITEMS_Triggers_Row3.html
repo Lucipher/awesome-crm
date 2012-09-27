@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=MacRoman" />
+<script src="../dbdoc.js" type="text/javascript"></script>
+<link href="../dbdoc.css" type="text/css" rel="stylesheet">
+</head>
+<body class="object">
+<div id="header"><h2>GOODS_RETURNED_ITEMS_Triggers_Row3</h2>
+<div class="tabs clearfix">
+
+<div class="tab" id="current"><div><a href="GOODS_RETURNED_ITEMS_Triggers_Row3.html"></a></div></div>
+</div></div><br/>
+<div class="tab-panes">
+<div id=""> <table cellpadding="0" cellspacing="0" cellspacing="0" summary=""><tr>
+	<th>SQL</th>
+</tr>
+	<tr><td><pre>
+TRIGGER update_item_on_return
+      AFTER INSERT ON GOODS_RETURNED_ITEMS
+      FOR EACH ROW
+      DECLARE
+        status    VARCHAR(20);
+        new_qty   NUMBER(19,6);
+        old_qty   NUMBER(19,6);
+      BEGIN
+        SELECT doc_status INTO status FROM goods_returneds WHERE id = :new.goods_returned_id;
+
+        IF status = 'posted' THEN
+          SELECT on_hand INTO old_qty FROM items WHERE id = :new.item_id;
+          new_qty := old_qty - :new.quantity;
+          UPDATE items SET items.on_hand = new_qty
+            WHERE items.id = :new.item_id;
+        END IF;
+
+      END;</pre>	</td></tr>
+</table></div></body></html>

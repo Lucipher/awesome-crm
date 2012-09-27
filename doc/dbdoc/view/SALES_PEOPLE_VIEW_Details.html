@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=MacRoman" />
+<script src="../dbdoc.js" type="text/javascript"></script>
+<link href="../dbdoc.css" type="text/css" rel="stylesheet">
+</head>
+<body class="object">
+<div id="header"><h2>SALES_PEOPLE_VIEW</h2>
+<div class="tabs clearfix">
+
+<div class="tab"><div><a href="SALES_PEOPLE_VIEW.html">Columns</a></div></div>
+<div class="tab"><div><a href="SALES_PEOPLE_VIEW_Grants.html">Grants</a></div></div>
+<div class="tab"><div><a href="SALES_PEOPLE_VIEW_Dependencies.html">Dependencies</a></div></div>
+<div class="tab" id="current"><div><a href="SALES_PEOPLE_VIEW_Details.html">Details</a></div></div>
+<div class="tab"><div><a href="SALES_PEOPLE_VIEW_Triggers.html">Triggers</a></div></div>
+</div></div><br/>
+<div class="tab-panes">
+<div id="Details"> <table cellpadding="0" cellspacing="0" cellspacing="0" summary=""><tr>
+	<th>Name</th>
+	<th>Value</th>
+</tr>
+	<tr>
+<td>CREATED</td>
+<td>26-SEP-12</td>
+	</tr>
+	<tr>
+<td>LAST_DDL_TIME</td>
+<td>26-SEP-12</td>
+	</tr>
+	<tr>
+<td>OWNER</td>
+<td>CRM</td>
+	</tr>
+	<tr>
+<td>VIEW_NAME</td>
+<td>SALES_PEOPLE_VIEW</td>
+	</tr>
+	<tr>
+<td>TEXT_LENGTH</td>
+<td>705</td>
+	</tr>
+	<tr>
+<td>TEXT</td>
+<td>SELECT
+    sales_people.id             AS id,
+    sales_people.memo           AS memo,
+    sales_people.commission     AS commission,
+    sales_people.locked         AS locked,
+    sales_people.team_id        AS team_id,
+    teams.name                  AS team_name,
+    sales_people.employee_id    AS employee_id,
+    employees.name              AS employee_name,
+    sales_people.created_at     AS created_at,
+    sales_people.updated_at     AS updated_at,
+    sales_people.credit_limit   AS credit_limit,
+    sales_people.credit_balance AS credit_balance
+  FROM
+    sales_people
+    INNER JOIN teams on sales_people.team_id = teams.id
+    INNER JOIN employees on sales_people.employee_id = employees.id</td>
+	</tr>
+	<tr>
+<td>TYPE_TEXT_LENGTH</td>
+<td>null</td>
+	</tr>
+	<tr>
+<td>TYPE_TEXT</td>
+<td>null</td>
+	</tr>
+	<tr>
+<td>OID_TEXT_LENGTH</td>
+<td>null</td>
+	</tr>
+	<tr>
+<td>OID_TEXT</td>
+<td>null</td>
+	</tr>
+	<tr>
+<td>VIEW_TYPE_OWNER</td>
+<td>null</td>
+	</tr>
+	<tr>
+<td>VIEW_TYPE</td>
+<td>null</td>
+	</tr>
+	<tr>
+<td>SUPERVIEW_NAME</td>
+<td>null</td>
+	</tr>
+	<tr>
+<td>EDITIONING_VIEW</td>
+<td>N</td>
+	</tr>
+	<tr>
+<td>READ_ONLY</td>
+<td>N</td>
+	</tr>
+</table></div></body></html>

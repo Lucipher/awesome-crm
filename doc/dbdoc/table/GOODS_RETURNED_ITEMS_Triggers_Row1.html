@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=MacRoman" />
+<script src="../dbdoc.js" type="text/javascript"></script>
+<link href="../dbdoc.css" type="text/css" rel="stylesheet">
+</head>
+<body class="object">
+<div id="header"><h2>GOODS_RETURNED_ITEMS_Triggers_Row1</h2>
+<div class="tabs clearfix">
+
+<div class="tab" id="current"><div><a href="GOODS_RETURNED_ITEMS_Triggers_Row1.html"></a></div></div>
+</div></div><br/>
+<div class="tab-panes">
+<div id=""> <table cellpadding="0" cellspacing="0" cellspacing="0" summary=""><tr>
+	<th>SQL</th>
+</tr>
+	<tr><td><pre>
+TRIGGER calc_goods_returned
+      AFTER INSERT OR UPDATE ON GOODS_RETURNED_ITEMS
+      FOR EACH ROW
+      DECLARE
+        grand_sum   NUMBER(16,9);
+        rec_id      NUMBER;
+      BEGIN
+        IF :old.id IS NULL THEN
+          rec_id := :new.goods_returned_id;
+        ELSE
+          rec_id := :old.goods_returned_id;
+        END IF;
+
+        SELECT doc_total INTO grand_sum
+        FROM goods_returneds
+        WHERE id = rec_id;
+
+        IF :new.id IS NOT NULL THEN
+          grand_sum   := grand_sum  + :new.grand_total;
+        END IF;
+
+        IF :old.id IS NOT NULL THEN
+          grand_sum   := grand_sum  - :old.grand_total;
+        END IF;
+
+        UPDATE goods_returneds SET
+        doc_total       = grand_sum
+        where id = rec_id;
+      END;</pre>	</td></tr>
+</table></div></body></html>

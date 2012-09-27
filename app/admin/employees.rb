@@ -1,6 +1,7 @@
 ActiveAdmin.register Employee, :namespace => false do
   menu :parent => "Human Resources"
   actions :all, :except => [:destroy]
+  config.filters = false
 
   index do
     column :id

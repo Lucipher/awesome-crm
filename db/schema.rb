@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923145203) do
+ActiveRecord::Schema.define(:version => 20120926055604) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",                                  :null => false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "ar_credit_memos", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
-    t.datetime "date"
+    t.datetime "doc_date"
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "ar_dp_invoices", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
-    t.datetime "date"
+    t.datetime "doc_date"
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "ar_invoices", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
-    t.datetime "date"
+    t.datetime "doc_date"
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
@@ -186,7 +186,7 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "delivery_orders", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
-    t.datetime "date"
+    t.datetime "doc_date"
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
@@ -203,8 +203,9 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "departments", :force => true do |t|
     t.string   "name",       :limit => 20
     t.string   "remarks",    :limit => 100
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
+    t.integer  "manager_id",                :precision => 38, :scale => 0
   end
 
   create_table "employees", :force => true do |t|
@@ -365,7 +366,7 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "sales_orders", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
-    t.datetime "date"
+    t.datetime "doc_date"
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
@@ -412,7 +413,7 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "sales_quotations", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
-    t.datetime "date"
+    t.datetime "doc_date"
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0
@@ -448,7 +449,7 @@ ActiveRecord::Schema.define(:version => 20120923145203) do
   create_table "sales_returns", :force => true do |t|
     t.string   "type",                :limit => 20
     t.string   "status",              :limit => 20
-    t.datetime "date"
+    t.datetime "doc_date"
     t.datetime "due_date"
     t.datetime "shipping_date"
     t.decimal  "total",                              :precision => 19, :scale => 6, :default => 0.0

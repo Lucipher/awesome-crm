@@ -1,0 +1,1 @@
+rvmsudo -E env DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH rails s -p 80

@@ -1,11 +1,12 @@
 ActiveAdmin.register SalesPerson, :namespace => false do
   menu :parent => "Human Resources"
   actions :all, :except => [:destroy]
+  config.filters = false
 
   index do
     column :id
-    column :employee
-    column :team
+    column :employee_name
+    column :team_name
     column :commission
     column :credit_limit do |rec|
       number_to_currency rec.credit_limit, :unit => "$"
@@ -21,8 +22,8 @@ ActiveAdmin.register SalesPerson, :namespace => false do
   show do |sp|
     attributes_table do
       row :id
-      row :employee
-      row :team
+      row :employee_name
+      row :team_name
       row :commission
       row :credit_limit do |rec|
         number_to_currency rec.credit_limit, :unit => "$"

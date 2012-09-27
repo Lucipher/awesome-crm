@@ -1,5 +1,6 @@
 ActiveAdmin.register Group, :as => "Item Group", :namespace => false do
   menu :parent => "Inventory"
+  config.filters = false
 
   index do
     column :id

@@ -1,5 +1,5 @@
 ActiveAdmin.register User, :namespace => false do
-  filter :employee
+  config.filters = false
 
   index do
     column :id

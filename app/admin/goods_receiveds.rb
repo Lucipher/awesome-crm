@@ -1,6 +1,7 @@
 ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace => false do
   menu :parent => "Inventory"
   actions :all, :except => [:destroy]
+  config.filters = false
 
   index do
     column :id

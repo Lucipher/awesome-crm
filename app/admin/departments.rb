@@ -1,9 +1,11 @@
 ActiveAdmin.register Department, :namespace => false do
   menu :parent => "Human Resources"
+  config.filters = false
 
   index do
     column :id
     column :name
+    column :manager
     column :remarks
 
     default_actions
@@ -13,6 +15,7 @@ ActiveAdmin.register Department, :namespace => false do
     attributes_table do
       row :id
       row :name
+      row :manager
       row :remarks
     end
   end
@@ -20,6 +23,7 @@ ActiveAdmin.register Department, :namespace => false do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :manager
       f.input :remarks,       :input_html => { :rows => 4 }
     end
     f.buttons

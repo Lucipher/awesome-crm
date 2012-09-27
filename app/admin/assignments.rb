@@ -1,5 +1,6 @@
 ActiveAdmin.register Assignment, :namespace => false do
   menu :parent => "Partners", :label => "Sales Person Assignments"
+  config.filters = false
 
   index do
     column :sales_person do |record|

@@ -1,5 +1,6 @@
 ActiveAdmin.register BusinessPartnerType, :namespace => false do
   menu :parent => "Partners"
+  config.filters = false
 
   index do
     column :id

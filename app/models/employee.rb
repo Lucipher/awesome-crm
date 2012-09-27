@@ -1,6 +1,7 @@
 class Employee < ActiveRecord::Base
-  self.table_name = "CRM.EMPLOYEES"
+  self.table_name = "CRM.EMPLOYEES_VIEW"
   self.sequence_name = "CRM.EMPLOYEES_SEQ"
+  self.primary_key = "id"
 
   attr_accessible :email, :gender, :name, :phone, :remarks, :start_date, :status, :terminate_date, :job_title_id,
                   :department_id

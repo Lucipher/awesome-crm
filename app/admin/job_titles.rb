@@ -1,5 +1,6 @@
 ActiveAdmin.register JobTitle, :namespace => false do
   menu :parent => "Human Resources"
+  config.filters = false
 
   index do
     column :id

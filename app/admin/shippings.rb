@@ -1,5 +1,6 @@
 ActiveAdmin.register Shipping, :namespace => false do
-  menu :parent => "Partners"
+  menu :label => "Shipping Methods", :parent => "Inventory"
+  config.filters = false
 
   index do
     column :id

@@ -2,6 +2,7 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
   menu :label => "Opportunities"
 
   actions :all, :except => [:destroy]
+  config.filters = false
 
   index do
     column :id

@@ -1,12 +1,11 @@
 ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
   menu :parent => "Human Resources"
+  config.filters = false
 
   index do
     column :id
     column :name
-    column :manager do |record|
-      record.manager.nil? ? "" : (link_to record.manager.employee.name, employee_path(record.manager.employee))
-    end
+    column :manager_name
     column :remarks
 
     default_actions
@@ -16,9 +15,7 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
     attributes_table do
       row :id
       row :name
-      row :manager do |record|
-        record.manager.nil? ? "" : (link_to record.manager.employee.name, employee_path(record.manager.employee))
-      end
+      row :manager_name
       row :remarks
     end
   end
@@ -26,7 +23,8 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :manager, :as => :select, :collection => Hash[SalesPerson.all.map{|p| [p.employee.name, p.id]}]
+      f.input :manager, :as => :select,
+        :collection => Hash[SalesPerson.all.select{|p| p.employee}.map{|p| [p.employee.name, p.id]}]
       f.input :remarks,       :input_html => { :rows => 4 }
     end
     f.buttons

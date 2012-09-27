@@ -1,13 +1,12 @@
 ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false do
   menu :parent => "Forms"
   actions :all, :except => [:destroy]
+  config.filters = false
 
   index do
     column :id
-    column :business_partner
-    column :sales_person do |record|
-      link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
-    end
+    column :partner_name
+    column :sales_person_name
     column :due_date
     column :shipping_date
     column :grand_total do |rec|
@@ -21,13 +20,11 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
   show do |r|
     attributes_table do
       row :id
-      row :business_partner
-      row :sales_person do |record|
-        link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
-      end
+      row :partner_name
+      row :sales_person_name
       row :type
       row("Status")      { |record| status_tag(record.status) }
-      row :date
+      row :doc_date
       row :due_date
       row :shipping_date
       row :total do |rec|
@@ -42,6 +39,12 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
       row :grand_total do |rec|
         number_to_currency rec.grand_total, :unit => "$"
       end
+      row :partner_phone
+      row :partner_billing_address
+      row :partner_shipping_address
+      row :partner_email
+      row :partner_type
+      row :shipping
       row :remarks
     end
 
@@ -98,7 +101,7 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
       f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
       f.input :type
       f.input :status,          :as => :select, :collection => %w(draft posted cancelled)
-      f.input :date,            :as => :datepicker
+      f.input :doc_date,        :as => :datepicker
       f.input :due_date,        :as => :datepicker
       f.input :shipping_date,   :as => :datepicker
       f.input :remarks
@@ -118,5 +121,17 @@ ActiveAdmin.register ArCreditMemo, :as => "AR Credit Memo", :namespace => false 
     end
 
     f.buttons
+  end
+
+  controller do
+    def create
+      @ar_credit_memo = ArCreditMemo.new(params[:ar_credit_memo])
+      @ar_credit_memo.id = ArCreditMemo.connection.select_value("SELECT crm.ar_credit_memos_seq.nextval FROM DUAL")
+      if @ar_credit_memo.save
+        redirect_to @ar_credit_memo, :notice => "AR credit memo was successfully created"
+      else
+        render :new
+      end
+    end
   end
 end
