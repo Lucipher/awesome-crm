@@ -4,7 +4,11 @@ ActiveAdmin.register Assignment, :namespace => false do
 
   index do
     column :sales_person do |record|
-      link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
+      if record.sales_person.employee
+        link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
+      else
+        ""
+      end
     end
     column :business_partner
 
@@ -14,7 +18,11 @@ ActiveAdmin.register Assignment, :namespace => false do
   show do
     attributes_table do
       row :sales_person do |record|
-        link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
+        if record.sales_person.employee
+          link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
+        else
+          ""
+        end
       end
       row :business_partner
     end

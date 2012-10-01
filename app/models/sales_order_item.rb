@@ -2,6 +2,8 @@ class SalesOrderItem < ActiveRecord::Base
   self.table_name = "CRM.SALES_ORDER_ITEMS"
   self.sequence_name = "CRM.SALES_ORDER_ITEMS_SEQ"
 
+  after_save  :update_doc_totals
+
   attr_accessible :disc_rate, :disc_total, :grand_total, :item_id, :line_num, :line_status, :line_total,
                   :price, :quantity, :remarks, :tax_rate, :tax_total, :sales_order_id, :ref_id
 
@@ -29,6 +31,15 @@ class SalesOrderItem < ActiveRecord::Base
     item.tax_total     = src.tax_total
 
     item
+  end
+
+private
+  def update_doc_totals
+    self.sales_order.total = self.sales_order.sales_order_items.map(&:line_total).reduce(:+)
+    self.sales_order.disc_total = self.sales_order.sales_order_items.map(&:disc_total).reduce(:+)
+    self.sales_order.tax_total = self.sales_order.sales_order_items.map(&:tax_total).reduce(:+)
+    self.sales_order.grand_total = self.sales_order.sales_order_items.map(&:grand_total).reduce(:+)
+    self.sales_order.save
   end
 
 end

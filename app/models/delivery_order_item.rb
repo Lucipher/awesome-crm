@@ -2,6 +2,8 @@ class DeliveryOrderItem < ActiveRecord::Base
   self.table_name = "CRM.DELIVERY_ORDER_ITEMS"
   self.sequence_name = "CRM.DELIVERY_ORDER_ITEMS_SEQ"
 
+  after_save  :update_doc_totals
+
   attr_accessible :delivery_order_id, :disc_rate, :disc_total, :grand_total, :item_id, :line_num,
                   :line_status, :line_total, :price, :quantity, :remarks, :tax_rate, :tax_total
 
@@ -30,4 +32,14 @@ class DeliveryOrderItem < ActiveRecord::Base
 
     item
   end
+
+private
+  def update_doc_totals
+    self.delivery_order.total = self.delivery_order.delivery_order_items.map(&:line_total).reduce(:+)
+    self.delivery_order.disc_total = self.delivery_order.delivery_order_items.map(&:disc_total).reduce(:+)
+    self.delivery_order.tax_total = self.delivery_order.delivery_order_items.map(&:tax_total).reduce(:+)
+    self.delivery_order.grand_total = self.delivery_order.delivery_order_items.map(&:grand_total).reduce(:+)
+    self.delivery_order.save
+  end
+  
 end

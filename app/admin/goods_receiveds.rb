@@ -8,9 +8,7 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
     column :employee
     column :doc_date
     column :doc_due_date
-    column :doc_total do |rec|
-      number_to_currency rec.doc_total, :unit => "$"
-    end
+    column("Doc Total")   { |record| number_to_currency record.doc_total, :unit => "$" }
     column("Status")      { |record| status_tag(record.doc_status) }
 
     default_actions
@@ -22,9 +20,7 @@ ActiveAdmin.register GoodsReceived, :as => "Goods Received Record", :namespace =
       row("Status")      { |record| status_tag(record.doc_status) }
       row :doc_date
       row :doc_due_date
-      row :doc_total do |rec|
-        number_to_currency rec.doc_total, :unit => "$"
-      end
+      row("Doc Total")   { |record| number_to_currency record.doc_total, :unit => "$" }
       row :remarks
       row :employee
       row :created_at

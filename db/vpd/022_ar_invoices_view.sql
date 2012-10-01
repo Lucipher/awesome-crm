@@ -25,13 +25,13 @@ SELECT
   ar_invoices.updated_at          AS updated_at
 FROM
   ar_invoices
-  LEFT OUTER JOIN business_partners
+  INNER JOIN business_partners
     ON ar_invoices.business_partner_id = business_partners.id
-  LEFT OUTER JOIN business_partner_types
+  INNER JOIN business_partner_types
     ON business_partners.business_partner_type_id = business_partner_types.id
-  LEFT OUTER JOIN shippings
+  INNER JOIN shippings
     ON business_partners.shipping_id = shippings.id
-  LEFT OUTER JOIN sales_people
+  INNER JOIN sales_people
     ON ar_invoices.sales_person_id = sales_people.id
-  LEFT OUTER JOIN employees
+  INNER JOIN employees
     ON sales_people.employee_id = employees.id;

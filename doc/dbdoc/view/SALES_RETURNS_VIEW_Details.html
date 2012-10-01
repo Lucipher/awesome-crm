@@ -37,7 +37,7 @@
 	</tr>
 	<tr>
 <td>TEXT_LENGTH</td>
-<td>1687</td>
+<td>1712</td>
 	</tr>
 	<tr>
 <td>TEXT</td>
@@ -67,15 +67,15 @@
   sales_returns.updated_at          AS updated_at
 FROM
   sales_returns
-  INNER JOIN business_partners
+  LEFT OUTER JOIN business_partners
     ON sales_returns.business_partner_id = business_partners.id
-  INNER JOIN business_partner_types
+  LEFT OUTER JOIN business_partner_types
     ON business_partners.business_partner_type_id = business_partner_types.id
-  INNER JOIN shippings
+  LEFT OUTER JOIN shippings
     ON business_partners.shipping_id = shippings.id
-  INNER JOIN sales_people
+  LEFT OUTER JOIN sales_people
     ON sales_returns.sales_person_id = sales_people.id
-  INNER JOIN employees
+  LEFT OUTER JOIN employees
     ON sales_people.employee_id = employees.id</td>
 	</tr>
 	<tr>

@@ -2,6 +2,8 @@ class ArInvoiceItem < ActiveRecord::Base
   self.table_name = "CRM.AR_INVOICE_ITEMS"
   self.sequence_name = "CRM.AR_INVOICE_ITEMS_SEQ"
 
+  after_save  :update_doc_totals
+
   attr_accessible :ar_invoice_id, :disc_rate, :disc_total, :grand_total, :item_id, :line_num,
                   :line_status, :line_total, :price, :quantity, :remarks, :tax_rate, :tax_total
 
@@ -30,4 +32,14 @@ class ArInvoiceItem < ActiveRecord::Base
 
     item
   end
+
+private
+  def update_doc_totals
+    self.ar_invoice.total = self.ar_invoice.ar_invoice_items.map(&:line_total).reduce(:+)
+    self.ar_invoice.disc_total = self.ar_invoice.ar_invoice_items.map(&:disc_total).reduce(:+)
+    self.ar_invoice.tax_total = self.ar_invoice.ar_invoice_items.map(&:tax_total).reduce(:+)
+    self.ar_invoice.grand_total = self.ar_invoice.ar_invoice_items.map(&:grand_total).reduce(:+)
+    self.ar_invoice.save
+  end
+  
 end

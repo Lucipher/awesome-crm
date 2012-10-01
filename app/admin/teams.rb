@@ -29,4 +29,16 @@ ActiveAdmin.register Team, :as => "Sales Team", :namespace => false do
     end
     f.buttons
   end
+
+  controller do
+    def create
+      @team = Team.new(params[:team])
+      @team.id = Team.connection.select_value("SELECT crm.teams_seq.nextval FROM DUAL")
+      if @team.save
+        redirect_to @team, :notice => "Team was successfully created"
+      else
+        render :new
+      end
+    end
+  end
 end

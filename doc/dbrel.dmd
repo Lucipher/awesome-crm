@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="dbrel" id="6543452C-BD55-7631-4E18-DF7CD5F3A008" version="3.5">
+<createdBy>edwin</createdBy>
+<createdTime>2012-09-28 13:01:09 UTC</createdTime>
+<ownerDesignName>dbrel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6543452C-BD55-7631-4E18-DF7CD5F3A008</designId>
+</OSDM_Design>

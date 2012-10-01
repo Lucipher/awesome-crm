@@ -49,4 +49,16 @@ ActiveAdmin.register SalesPerson, :namespace => false do
 
     f.buttons
   end
+
+  controller do
+    def create
+      @sales_person = SalesPerson.new(params[:sales_person])
+      @sales_person.id = SalesPerson.connection.select_value("SELECT crm.sales_people_seq.nextval FROM DUAL")
+      if @sales_person.save
+        redirect_to @sales_person, :notice => "Sales Person was successfully created"
+      else
+        render :new
+      end
+    end
+  end
 end

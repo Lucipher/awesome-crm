@@ -8,7 +8,11 @@ ActiveAdmin.register SalesOpportunity, :namespace => false do
     column :id
     column :business_partner
     column("Created By") do |record|
-      link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
+      if record.sales_person.employee
+        link_to record.sales_person.employee.name, employee_path(record.sales_person.employee)
+      else
+        ""
+      end
     end
     column :doc_date
     column :open_date

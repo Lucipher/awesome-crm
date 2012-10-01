@@ -9,9 +9,7 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
     column :sales_person_name
     column :due_date
     column :shipping_date
-    column :grand_total do |rec|
-      number_to_currency rec.grand_total, :unit => "$"
-    end
+    column("Grand Total") { |record| number_to_currency record.grand_total, :unit => "$" }
     column("Status")      { |record| status_tag(record.status) }
 
     default_actions
@@ -22,23 +20,14 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
       row :id
       row :partner_name
       row :sales_person_name
-      row :type
       row("Status")      { |record| status_tag(record.status) }
       row :doc_date
       row :due_date
       row :shipping_date
-      row :total do |rec|
-        number_to_currency rec.total, :unit => "$"
-      end
-      row :disc_total do |rec|
-        number_to_currency rec.disc_total, :unit => "$"
-      end
-      row :tax_total do |rec|
-        number_to_currency rec.tax_total, :unit => "$"
-      end
-      row :grand_total do |rec|
-        number_to_currency rec.grand_total, :unit => "$"
-      end
+      row("Total")        { |record| number_to_currency record.total, :unit => "$" }
+      row("Disc Total")   { |record| number_to_currency record.disc_total, :unit => "$" }
+      row("Tax Total")    { |record| number_to_currency record.tax_total, :unit => "$" }
+      row("Grand Total")  { |record| number_to_currency record.grand_total, :unit => "$" }
       row :partner_phone
       row :partner_billing_address
       row :partner_shipping_address
@@ -97,7 +86,6 @@ ActiveAdmin.register SalesQuotation, :namespace => false do
     f.inputs "Document Header" do
       f.input :business_partner
       f.input :sales_person_id, :as => :hidden, :value => current_user.employee.sales_person.id
-      f.input :type
       f.input :status,          :as => :select, :collection => %w(draft posted cancelled)
       f.input :doc_date,        :as => :datepicker
       f.input :due_date,        :as => :datepicker
